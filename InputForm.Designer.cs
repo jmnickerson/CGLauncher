@@ -55,23 +55,18 @@
             this.applybutton = new System.Windows.Forms.Button();
             this.interactlabel = new System.Windows.Forms.Label();
             this.interactBox = new System.Windows.Forms.TextBox();
-<<<<<<< HEAD
             this.actionBox = new System.Windows.Forms.GroupBox();
             this.combatBox = new System.Windows.Forms.GroupBox();
+            this.parrylabel = new System.Windows.Forms.Label();
+            this.parryBox = new System.Windows.Forms.TextBox();
             this.actionBox.SuspendLayout();
             this.combatBox.SuspendLayout();
-=======
->>>>>>> origin/master
             this.SuspendLayout();
             // 
             // primaryActionLabel
             // 
             this.primaryActionLabel.AutoSize = true;
-<<<<<<< HEAD
             this.primaryActionLabel.Location = new System.Drawing.Point(27, 19);
-=======
-            this.primaryActionLabel.Location = new System.Drawing.Point(68, 34);
->>>>>>> origin/master
             this.primaryActionLabel.Name = "primaryActionLabel";
             this.primaryActionLabel.Size = new System.Drawing.Size(77, 13);
             this.primaryActionLabel.TabIndex = 0;
@@ -80,11 +75,7 @@
             // secondaryActionLabel
             // 
             this.secondaryActionLabel.AutoSize = true;
-<<<<<<< HEAD
             this.secondaryActionLabel.Location = new System.Drawing.Point(7, 45);
-=======
-            this.secondaryActionLabel.Location = new System.Drawing.Point(48, 60);
->>>>>>> origin/master
             this.secondaryActionLabel.Name = "secondaryActionLabel";
             this.secondaryActionLabel.Size = new System.Drawing.Size(94, 13);
             this.secondaryActionLabel.TabIndex = 1;
@@ -92,28 +83,16 @@
             // 
             // primaryActionBox
             // 
-<<<<<<< HEAD
             this.primaryActionBox.Location = new System.Drawing.Point(105, 16);
-=======
-            this.primaryActionBox.Location = new System.Drawing.Point(146, 31);
->>>>>>> origin/master
             this.primaryActionBox.Name = "primaryActionBox";
             this.primaryActionBox.Size = new System.Drawing.Size(50, 20);
             this.primaryActionBox.TabIndex = 2;
             this.primaryActionBox.Tag = "";
             this.primaryActionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-<<<<<<< HEAD
             // 
             // secondaryActionBox
             // 
             this.secondaryActionBox.Location = new System.Drawing.Point(105, 42);
-=======
-            //this.primaryActionBox.TextChanged += new System.EventHandler(this.primaryActionBox_TextChanged);
-            // 
-            // secondaryActionBox
-            // 
-            this.secondaryActionBox.Location = new System.Drawing.Point(146, 57);
->>>>>>> origin/master
             this.secondaryActionBox.Name = "secondaryActionBox";
             this.secondaryActionBox.Size = new System.Drawing.Size(50, 20);
             this.secondaryActionBox.TabIndex = 3;
@@ -122,11 +101,7 @@
             // 
             // action1Box
             // 
-<<<<<<< HEAD
             this.action1Box.Location = new System.Drawing.Point(105, 68);
-=======
-            this.action1Box.Location = new System.Drawing.Point(146, 83);
->>>>>>> origin/master
             this.action1Box.Name = "action1Box";
             this.action1Box.Size = new System.Drawing.Size(50, 20);
             this.action1Box.TabIndex = 4;
@@ -136,11 +111,7 @@
             // 
             // action6Box
             // 
-<<<<<<< HEAD
             this.action6Box.Location = new System.Drawing.Point(105, 198);
-=======
-            this.action6Box.Location = new System.Drawing.Point(146, 213);
->>>>>>> origin/master
             this.action6Box.Name = "action6Box";
             this.action6Box.Size = new System.Drawing.Size(50, 20);
             this.action6Box.TabIndex = 5;
@@ -149,11 +120,7 @@
             // 
             // action3Box
             // 
-<<<<<<< HEAD
             this.action3Box.Location = new System.Drawing.Point(105, 120);
-=======
-            this.action3Box.Location = new System.Drawing.Point(146, 135);
->>>>>>> origin/master
             this.action3Box.Name = "action3Box";
             this.action3Box.Size = new System.Drawing.Size(50, 20);
             this.action3Box.TabIndex = 6;
@@ -162,11 +129,7 @@
             // 
             // action4Box
             // 
-<<<<<<< HEAD
             this.action4Box.Location = new System.Drawing.Point(105, 146);
-=======
-            this.action4Box.Location = new System.Drawing.Point(146, 161);
->>>>>>> origin/master
             this.action4Box.Name = "action4Box";
             this.action4Box.Size = new System.Drawing.Size(50, 20);
             this.action4Box.TabIndex = 7;
@@ -175,11 +138,7 @@
             // 
             // action2Box
             // 
-<<<<<<< HEAD
             this.action2Box.Location = new System.Drawing.Point(105, 94);
-=======
-            this.action2Box.Location = new System.Drawing.Point(146, 109);
->>>>>>> origin/master
             this.action2Box.Name = "action2Box";
             this.action2Box.Size = new System.Drawing.Size(50, 20);
             this.action2Box.TabIndex = 8;
@@ -188,11 +147,7 @@
             // 
             // action5Box
             // 
-<<<<<<< HEAD
             this.action5Box.Location = new System.Drawing.Point(105, 172);
-=======
-            this.action5Box.Location = new System.Drawing.Point(146, 187);
->>>>>>> origin/master
             this.action5Box.Name = "action5Box";
             this.action5Box.Size = new System.Drawing.Size(50, 20);
             this.action5Box.TabIndex = 9;
@@ -202,11 +157,7 @@
             // action1label
             // 
             this.action1label.AutoSize = true;
-<<<<<<< HEAD
             this.action1label.Location = new System.Drawing.Point(48, 71);
-=======
-            this.action1label.Location = new System.Drawing.Point(89, 86);
->>>>>>> origin/master
             this.action1label.Name = "action1label";
             this.action1label.Size = new System.Drawing.Size(49, 13);
             this.action1label.TabIndex = 10;
@@ -215,11 +166,7 @@
             // action6label
             // 
             this.action6label.AutoSize = true;
-<<<<<<< HEAD
             this.action6label.Location = new System.Drawing.Point(48, 205);
-=======
-            this.action6label.Location = new System.Drawing.Point(89, 220);
->>>>>>> origin/master
             this.action6label.Name = "action6label";
             this.action6label.Size = new System.Drawing.Size(49, 13);
             this.action6label.TabIndex = 12;
@@ -228,11 +175,7 @@
             // action5label
             // 
             this.action5label.AutoSize = true;
-<<<<<<< HEAD
             this.action5label.Location = new System.Drawing.Point(48, 179);
-=======
-            this.action5label.Location = new System.Drawing.Point(89, 194);
->>>>>>> origin/master
             this.action5label.Name = "action5label";
             this.action5label.Size = new System.Drawing.Size(49, 13);
             this.action5label.TabIndex = 13;
@@ -241,11 +184,7 @@
             // action4label
             // 
             this.action4label.AutoSize = true;
-<<<<<<< HEAD
             this.action4label.Location = new System.Drawing.Point(48, 149);
-=======
-            this.action4label.Location = new System.Drawing.Point(89, 164);
->>>>>>> origin/master
             this.action4label.Name = "action4label";
             this.action4label.Size = new System.Drawing.Size(49, 13);
             this.action4label.TabIndex = 14;
@@ -254,11 +193,7 @@
             // action3label
             // 
             this.action3label.AutoSize = true;
-<<<<<<< HEAD
             this.action3label.Location = new System.Drawing.Point(48, 123);
-=======
-            this.action3label.Location = new System.Drawing.Point(89, 138);
->>>>>>> origin/master
             this.action3label.Name = "action3label";
             this.action3label.Size = new System.Drawing.Size(49, 13);
             this.action3label.TabIndex = 15;
@@ -267,11 +202,7 @@
             // action2label
             // 
             this.action2label.AutoSize = true;
-<<<<<<< HEAD
             this.action2label.Location = new System.Drawing.Point(48, 97);
-=======
-            this.action2label.Location = new System.Drawing.Point(89, 112);
->>>>>>> origin/master
             this.action2label.Name = "action2label";
             this.action2label.Size = new System.Drawing.Size(49, 13);
             this.action2label.TabIndex = 16;
@@ -279,11 +210,7 @@
             // 
             // blockBox
             // 
-<<<<<<< HEAD
             this.blockBox.Location = new System.Drawing.Point(74, 28);
-=======
-            this.blockBox.Location = new System.Drawing.Point(146, 239);
->>>>>>> origin/master
             this.blockBox.Name = "blockBox";
             this.blockBox.Size = new System.Drawing.Size(50, 20);
             this.blockBox.TabIndex = 17;
@@ -293,11 +220,7 @@
             // blocklabel
             // 
             this.blocklabel.AutoSize = true;
-<<<<<<< HEAD
             this.blocklabel.Location = new System.Drawing.Point(29, 31);
-=======
-            this.blocklabel.Location = new System.Drawing.Point(101, 242);
->>>>>>> origin/master
             this.blocklabel.Name = "blocklabel";
             this.blocklabel.Size = new System.Drawing.Size(37, 13);
             this.blocklabel.TabIndex = 18;
@@ -305,11 +228,7 @@
             // 
             // dodgeBox
             // 
-<<<<<<< HEAD
             this.dodgeBox.Location = new System.Drawing.Point(74, 54);
-=======
-            this.dodgeBox.Location = new System.Drawing.Point(146, 265);
->>>>>>> origin/master
             this.dodgeBox.Name = "dodgeBox";
             this.dodgeBox.Size = new System.Drawing.Size(50, 20);
             this.dodgeBox.TabIndex = 19;
@@ -319,11 +238,7 @@
             // dodgelabel
             // 
             this.dodgelabel.AutoSize = true;
-<<<<<<< HEAD
             this.dodgelabel.Location = new System.Drawing.Point(25, 57);
-=======
-            this.dodgelabel.Location = new System.Drawing.Point(97, 268);
->>>>>>> origin/master
             this.dodgelabel.Name = "dodgelabel";
             this.dodgelabel.Size = new System.Drawing.Size(45, 13);
             this.dodgelabel.TabIndex = 20;
@@ -331,11 +246,7 @@
             // 
             // jumpBox
             // 
-<<<<<<< HEAD
             this.jumpBox.Location = new System.Drawing.Point(74, 80);
-=======
-            this.jumpBox.Location = new System.Drawing.Point(146, 291);
->>>>>>> origin/master
             this.jumpBox.Name = "jumpBox";
             this.jumpBox.Size = new System.Drawing.Size(50, 20);
             this.jumpBox.TabIndex = 21;
@@ -345,11 +256,7 @@
             // jumplabel
             // 
             this.jumplabel.AutoSize = true;
-<<<<<<< HEAD
             this.jumplabel.Location = new System.Drawing.Point(31, 83);
-=======
-            this.jumplabel.Location = new System.Drawing.Point(103, 294);
->>>>>>> origin/master
             this.jumplabel.Name = "jumplabel";
             this.jumplabel.Size = new System.Drawing.Size(35, 13);
             this.jumplabel.TabIndex = 22;
@@ -358,11 +265,7 @@
             // 
             // closebutton
             // 
-<<<<<<< HEAD
             this.closebutton.Location = new System.Drawing.Point(281, 297);
-=======
-            this.closebutton.Location = new System.Drawing.Point(197, 372);
->>>>>>> origin/master
             this.closebutton.Name = "closebutton";
             this.closebutton.Size = new System.Drawing.Size(75, 23);
             this.closebutton.TabIndex = 23;
@@ -372,11 +275,7 @@
             // 
             // cancelbutton
             // 
-<<<<<<< HEAD
             this.cancelbutton.Location = new System.Drawing.Point(96, 297);
-=======
-            this.cancelbutton.Location = new System.Drawing.Point(12, 372);
->>>>>>> origin/master
             this.cancelbutton.Name = "cancelbutton";
             this.cancelbutton.Size = new System.Drawing.Size(75, 23);
             this.cancelbutton.TabIndex = 24;
@@ -386,11 +285,7 @@
             // 
             // applybutton
             // 
-<<<<<<< HEAD
             this.applybutton.Location = new System.Drawing.Point(190, 297);
-=======
-            this.applybutton.Location = new System.Drawing.Point(106, 372);
->>>>>>> origin/master
             this.applybutton.Name = "applybutton";
             this.applybutton.Size = new System.Drawing.Size(75, 23);
             this.applybutton.TabIndex = 25;
@@ -400,11 +295,7 @@
             // interactlabel
             // 
             this.interactlabel.AutoSize = true;
-<<<<<<< HEAD
             this.interactlabel.Location = new System.Drawing.Point(55, 229);
-=======
-            this.interactlabel.Location = new System.Drawing.Point(96, 320);
->>>>>>> origin/master
             this.interactlabel.Name = "interactlabel";
             this.interactlabel.Size = new System.Drawing.Size(46, 13);
             this.interactlabel.TabIndex = 26;
@@ -412,18 +303,13 @@
             // 
             // interactBox
             // 
-<<<<<<< HEAD
             this.interactBox.Location = new System.Drawing.Point(105, 226);
-=======
-            this.interactBox.Location = new System.Drawing.Point(146, 317);
->>>>>>> origin/master
             this.interactBox.Name = "interactBox";
             this.interactBox.Size = new System.Drawing.Size(50, 20);
             this.interactBox.TabIndex = 27;
             this.interactBox.Tag = "";
             this.interactBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-<<<<<<< HEAD
             // actionBox
             // 
             this.actionBox.Controls.Add(this.primaryActionLabel);
@@ -454,6 +340,8 @@
             // 
             // combatBox
             // 
+            this.combatBox.Controls.Add(this.parryBox);
+            this.combatBox.Controls.Add(this.parrylabel);
             this.combatBox.Controls.Add(this.blocklabel);
             this.combatBox.Controls.Add(this.blockBox);
             this.combatBox.Controls.Add(this.dodgeBox);
@@ -462,18 +350,33 @@
             this.combatBox.Controls.Add(this.jumplabel);
             this.combatBox.Location = new System.Drawing.Point(260, 21);
             this.combatBox.Name = "combatBox";
-            this.combatBox.Size = new System.Drawing.Size(156, 122);
+            this.combatBox.Size = new System.Drawing.Size(156, 148);
             this.combatBox.TabIndex = 29;
             this.combatBox.TabStop = false;
             this.combatBox.Text = "Combat";
             // 
-=======
->>>>>>> origin/master
+            // parrylabel
+            // 
+            this.parrylabel.AutoSize = true;
+            this.parrylabel.Location = new System.Drawing.Point(31, 109);
+            this.parrylabel.Name = "parrylabel";
+            this.parrylabel.Size = new System.Drawing.Size(34, 13);
+            this.parrylabel.TabIndex = 23;
+            this.parrylabel.Text = "Parry:";
+            // 
+            // parryBox
+            // 
+            this.parryBox.Location = new System.Drawing.Point(74, 106);
+            this.parryBox.Name = "parryBox";
+            this.parryBox.Size = new System.Drawing.Size(50, 20);
+            this.parryBox.TabIndex = 24;
+            this.parryBox.Tag = "";
+            this.parryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(459, 339);
             this.Controls.Add(this.combatBox);
             this.Controls.Add(this.actionBox);
@@ -488,41 +391,6 @@
             this.combatBox.ResumeLayout(false);
             this.combatBox.PerformLayout();
             this.ResumeLayout(false);
-=======
-            this.ClientSize = new System.Drawing.Size(284, 411);
-            this.Controls.Add(this.interactBox);
-            this.Controls.Add(this.interactlabel);
-            this.Controls.Add(this.applybutton);
-            this.Controls.Add(this.cancelbutton);
-            this.Controls.Add(this.closebutton);
-            this.Controls.Add(this.jumplabel);
-            this.Controls.Add(this.jumpBox);
-            this.Controls.Add(this.dodgelabel);
-            this.Controls.Add(this.dodgeBox);
-            this.Controls.Add(this.blocklabel);
-            this.Controls.Add(this.blockBox);
-            this.Controls.Add(this.action2label);
-            this.Controls.Add(this.action3label);
-            this.Controls.Add(this.action4label);
-            this.Controls.Add(this.action5label);
-            this.Controls.Add(this.action6label);
-            this.Controls.Add(this.action1label);
-            this.Controls.Add(this.action5Box);
-            this.Controls.Add(this.action2Box);
-            this.Controls.Add(this.action4Box);
-            this.Controls.Add(this.action3Box);
-            this.Controls.Add(this.action6Box);
-            this.Controls.Add(this.action1Box);
-            this.Controls.Add(this.secondaryActionBox);
-            this.Controls.Add(this.primaryActionBox);
-            this.Controls.Add(this.secondaryActionLabel);
-            this.Controls.Add(this.primaryActionLabel);
-            this.Name = "InputForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Input Settings";
-            this.ResumeLayout(false);
-            this.PerformLayout();
->>>>>>> origin/master
 
         }
 
@@ -555,10 +423,9 @@
         private System.Windows.Forms.Button applybutton;
         private System.Windows.Forms.Label interactlabel;
         private System.Windows.Forms.TextBox interactBox;
-<<<<<<< HEAD
         private System.Windows.Forms.GroupBox actionBox;
         private System.Windows.Forms.GroupBox combatBox;
-=======
->>>>>>> origin/master
+        private System.Windows.Forms.TextBox parryBox;
+        private System.Windows.Forms.Label parrylabel;
     }
 }
