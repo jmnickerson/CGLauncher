@@ -62,6 +62,7 @@
             this.AdvVideoButton.TabIndex = 2;
             this.AdvVideoButton.Text = "Advanced Video Settings";
             this.AdvVideoButton.UseVisualStyleBackColor = true;
+            this.AdvVideoButton.Click += new System.EventHandler(this.AdvVideoButton_Click);
             // 
             // MainForm
             // 

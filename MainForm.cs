@@ -26,7 +26,14 @@ namespace CryLaunch
 
         private void button2_Click(object sender, EventArgs e)
         {
+            InputForm inputform = new InputForm();
+            inputform.Show();
+        }
 
+        private void AdvVideoButton_Click(object sender, EventArgs e)
+        {
+            AdvancedVideoSettingsForm avsf = new AdvancedVideoSettingsForm();
+            avsf.Show();
         }
     }
 }
