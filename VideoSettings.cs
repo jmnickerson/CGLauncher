@@ -10,7 +10,7 @@ namespace CryLaunch
 {
     class VideoSettings
     {
-        private string FILE = "E:/Dropbox/Dropbox/Programming/CryLaunch/autoexec2.cfg";
+        private string FILE = "../autoexec2.cfg";
         private bool fullScreen;
         private bool VSync;
         private bool motionBlur;
