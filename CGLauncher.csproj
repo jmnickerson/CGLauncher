@@ -47,6 +47,9 @@
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
     <Compile Include="InputSettings.cs" />
+    <Compile Include="InputTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>

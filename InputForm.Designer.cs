@@ -1,4 +1,4 @@
-﻿namespace CryLaunch
+﻿namespace CGLauncher
 {
     partial class InputForm
     {
@@ -57,17 +57,17 @@
             this.interactBox = new System.Windows.Forms.TextBox();
             this.actionBox = new System.Windows.Forms.GroupBox();
             this.combatBox = new System.Windows.Forms.GroupBox();
-            this.parrylabel = new System.Windows.Forms.Label();
             this.parryBox = new System.Windows.Forms.TextBox();
+            this.parrylabel = new System.Windows.Forms.Label();
             this.movementBox = new System.Windows.Forms.GroupBox();
             this.backBox = new System.Windows.Forms.TextBox();
-            this.backlabel = new System.Windows.Forms.Label();
             this.forwardlabel2 = new System.Windows.Forms.Label();
-            this.forwardBox = new System.Windows.Forms.TextBox();
-            this.leftBox = new System.Windows.Forms.TextBox();
-            this.leftlabel = new System.Windows.Forms.Label();
-            this.rightBox = new System.Windows.Forms.TextBox();
+            this.backlabel = new System.Windows.Forms.Label();
             this.rightlabel = new System.Windows.Forms.Label();
+            this.rightBox = new System.Windows.Forms.TextBox();
+            this.forwardBox = new System.Windows.Forms.TextBox();
+            this.leftlabel = new System.Windows.Forms.Label();
+            this.leftBox = new System.Windows.Forms.TextBox();
             this.actionBox.SuspendLayout();
             this.combatBox.SuspendLayout();
             this.movementBox.SuspendLayout();
@@ -99,6 +99,7 @@
             this.primaryActionBox.TabIndex = 2;
             this.primaryActionBox.Tag = "";
             this.primaryActionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.primaryActionBox.TextChanged += new System.EventHandler(this.primaryActionBox_TextChanged);
             // 
             // secondaryActionBox
             // 
@@ -117,7 +118,6 @@
             this.action1Box.TabIndex = 4;
             this.action1Box.Tag = "";
             this.action1Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.action1Box.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // action6Box
             // 
@@ -275,7 +275,7 @@
             // 
             // closebutton
             // 
-            this.closebutton.Location = new System.Drawing.Point(304, 344);
+            this.closebutton.Location = new System.Drawing.Point(297, 344);
             this.closebutton.Name = "closebutton";
             this.closebutton.Size = new System.Drawing.Size(75, 23);
             this.closebutton.TabIndex = 23;
@@ -285,7 +285,7 @@
             // 
             // cancelbutton
             // 
-            this.cancelbutton.Location = new System.Drawing.Point(119, 344);
+            this.cancelbutton.Location = new System.Drawing.Point(112, 344);
             this.cancelbutton.Name = "cancelbutton";
             this.cancelbutton.Size = new System.Drawing.Size(75, 23);
             this.cancelbutton.TabIndex = 24;
@@ -295,7 +295,7 @@
             // 
             // applybutton
             // 
-            this.applybutton.Location = new System.Drawing.Point(213, 344);
+            this.applybutton.Location = new System.Drawing.Point(206, 344);
             this.applybutton.Name = "applybutton";
             this.applybutton.Size = new System.Drawing.Size(75, 23);
             this.applybutton.TabIndex = 25;
@@ -365,15 +365,6 @@
             this.combatBox.TabStop = false;
             this.combatBox.Text = "Combat";
             // 
-            // parrylabel
-            // 
-            this.parrylabel.AutoSize = true;
-            this.parrylabel.Location = new System.Drawing.Point(31, 109);
-            this.parrylabel.Name = "parrylabel";
-            this.parrylabel.Size = new System.Drawing.Size(34, 13);
-            this.parrylabel.TabIndex = 23;
-            this.parrylabel.Text = "Parry:";
-            // 
             // parryBox
             // 
             this.parryBox.Location = new System.Drawing.Point(74, 106);
@@ -382,6 +373,15 @@
             this.parryBox.TabIndex = 24;
             this.parryBox.Tag = "";
             this.parryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // parrylabel
+            // 
+            this.parrylabel.AutoSize = true;
+            this.parrylabel.Location = new System.Drawing.Point(31, 109);
+            this.parrylabel.Name = "parrylabel";
+            this.parrylabel.Size = new System.Drawing.Size(34, 13);
+            this.parrylabel.TabIndex = 23;
+            this.parrylabel.Text = "Parry:";
             // 
             // movementBox
             // 
@@ -409,15 +409,6 @@
             this.backBox.Tag = "";
             this.backBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // backlabel
-            // 
-            this.backlabel.AutoSize = true;
-            this.backlabel.Location = new System.Drawing.Point(35, 100);
-            this.backlabel.Name = "backlabel";
-            this.backlabel.Size = new System.Drawing.Size(35, 13);
-            this.backlabel.TabIndex = 31;
-            this.backlabel.Text = "Back:";
-            // 
             // forwardlabel2
             // 
             this.forwardlabel2.AutoSize = true;
@@ -427,41 +418,14 @@
             this.forwardlabel2.TabIndex = 26;
             this.forwardlabel2.Text = "Forward:";
             // 
-            // forwardBox
+            // backlabel
             // 
-            this.forwardBox.Location = new System.Drawing.Point(76, 19);
-            this.forwardBox.Name = "forwardBox";
-            this.forwardBox.Size = new System.Drawing.Size(50, 20);
-            this.forwardBox.TabIndex = 25;
-            this.forwardBox.Tag = "";
-            this.forwardBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // leftBox
-            // 
-            this.leftBox.Location = new System.Drawing.Point(76, 45);
-            this.leftBox.Name = "leftBox";
-            this.leftBox.Size = new System.Drawing.Size(50, 20);
-            this.leftBox.TabIndex = 27;
-            this.leftBox.Tag = "";
-            this.leftBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // leftlabel
-            // 
-            this.leftlabel.AutoSize = true;
-            this.leftlabel.Location = new System.Drawing.Point(42, 48);
-            this.leftlabel.Name = "leftlabel";
-            this.leftlabel.Size = new System.Drawing.Size(28, 13);
-            this.leftlabel.TabIndex = 28;
-            this.leftlabel.Text = "Left:";
-            // 
-            // rightBox
-            // 
-            this.rightBox.Location = new System.Drawing.Point(76, 71);
-            this.rightBox.Name = "rightBox";
-            this.rightBox.Size = new System.Drawing.Size(50, 20);
-            this.rightBox.TabIndex = 29;
-            this.rightBox.Tag = "";
-            this.rightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.backlabel.AutoSize = true;
+            this.backlabel.Location = new System.Drawing.Point(35, 100);
+            this.backlabel.Name = "backlabel";
+            this.backlabel.Size = new System.Drawing.Size(35, 13);
+            this.backlabel.TabIndex = 31;
+            this.backlabel.Text = "Back:";
             // 
             // rightlabel
             // 
@@ -472,11 +436,47 @@
             this.rightlabel.TabIndex = 30;
             this.rightlabel.Text = "Right:";
             // 
+            // rightBox
+            // 
+            this.rightBox.Location = new System.Drawing.Point(76, 71);
+            this.rightBox.Name = "rightBox";
+            this.rightBox.Size = new System.Drawing.Size(50, 20);
+            this.rightBox.TabIndex = 29;
+            this.rightBox.Tag = "";
+            this.rightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // forwardBox
+            // 
+            this.forwardBox.Location = new System.Drawing.Point(76, 19);
+            this.forwardBox.Name = "forwardBox";
+            this.forwardBox.Size = new System.Drawing.Size(50, 20);
+            this.forwardBox.TabIndex = 25;
+            this.forwardBox.Tag = "";
+            this.forwardBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // leftlabel
+            // 
+            this.leftlabel.AutoSize = true;
+            this.leftlabel.Location = new System.Drawing.Point(42, 48);
+            this.leftlabel.Name = "leftlabel";
+            this.leftlabel.Size = new System.Drawing.Size(28, 13);
+            this.leftlabel.TabIndex = 28;
+            this.leftlabel.Text = "Left:";
+            // 
+            // leftBox
+            // 
+            this.leftBox.Location = new System.Drawing.Point(76, 45);
+            this.leftBox.Name = "leftBox";
+            this.leftBox.Size = new System.Drawing.Size(50, 20);
+            this.leftBox.TabIndex = 27;
+            this.leftBox.Tag = "";
+            this.leftBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(561, 379);
+            this.ClientSize = new System.Drawing.Size(460, 379);
             this.Controls.Add(this.movementBox);
             this.Controls.Add(this.combatBox);
             this.Controls.Add(this.actionBox);

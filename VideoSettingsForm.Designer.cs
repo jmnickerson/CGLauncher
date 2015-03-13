@@ -1,4 +1,4 @@
-﻿namespace CryLaunch
+﻿namespace CGLauncher
 {
     partial class VideoSettingsForm
     {

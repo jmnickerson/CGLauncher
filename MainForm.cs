@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CryLaunch
+namespace CGLauncher
 {
     public partial class MainForm : Form
     {

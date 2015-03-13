@@ -7,18 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace CryLaunch
+namespace CGLauncher
 {
     public partial class InputForm : Form
     {
         public InputForm()
         {
             InitializeComponent();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void cancelbutton_Click(object sender, EventArgs e)
@@ -38,6 +33,17 @@ namespace CryLaunch
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void primaryActionBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void primaryActionBox_Click(object sender, System.EventArgs e)
+        {
+            //TextBox1.SelectAll();
 
         }
     }
