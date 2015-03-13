@@ -1,4 +1,5 @@
-﻿namespace CGLauncher
+﻿using System.Windows.Forms;
+namespace CGLauncher
 {
     partial class InputForm
     {
@@ -76,7 +77,7 @@
             // primaryActionLabel
             // 
             this.primaryActionLabel.AutoSize = true;
-            this.primaryActionLabel.Location = new System.Drawing.Point(27, 32);
+            this.primaryActionLabel.Location = new System.Drawing.Point(31, 32);
             this.primaryActionLabel.Name = "primaryActionLabel";
             this.primaryActionLabel.Size = new System.Drawing.Size(77, 13);
             this.primaryActionLabel.TabIndex = 0;
@@ -85,7 +86,7 @@
             // secondaryActionLabel
             // 
             this.secondaryActionLabel.AutoSize = true;
-            this.secondaryActionLabel.Location = new System.Drawing.Point(7, 58);
+            this.secondaryActionLabel.Location = new System.Drawing.Point(11, 58);
             this.secondaryActionLabel.Name = "secondaryActionLabel";
             this.secondaryActionLabel.Size = new System.Drawing.Size(94, 13);
             this.secondaryActionLabel.TabIndex = 1;
@@ -93,81 +94,82 @@
             // 
             // primaryActionBox
             // 
-            this.primaryActionBox.Location = new System.Drawing.Point(105, 29);
+            this.primaryActionBox.Location = new System.Drawing.Point(109, 29);
             this.primaryActionBox.Name = "primaryActionBox";
-            this.primaryActionBox.Size = new System.Drawing.Size(50, 20);
+            this.primaryActionBox.Size = new System.Drawing.Size(70, 20);
             this.primaryActionBox.TabIndex = 2;
             this.primaryActionBox.Tag = "";
-            this.primaryActionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.primaryActionBox.TextChanged += new System.EventHandler(this.primaryActionBox_TextChanged);
+            this.primaryActionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.primaryActionBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
+            this.primaryActionBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // secondaryActionBox
             // 
-            this.secondaryActionBox.Location = new System.Drawing.Point(105, 55);
+            this.secondaryActionBox.Location = new System.Drawing.Point(109, 55);
             this.secondaryActionBox.Name = "secondaryActionBox";
-            this.secondaryActionBox.Size = new System.Drawing.Size(50, 20);
+            this.secondaryActionBox.Size = new System.Drawing.Size(70, 20);
             this.secondaryActionBox.TabIndex = 3;
             this.secondaryActionBox.Tag = "";
-            this.secondaryActionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.secondaryActionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // action1Box
             // 
-            this.action1Box.Location = new System.Drawing.Point(105, 81);
+            this.action1Box.Location = new System.Drawing.Point(109, 81);
             this.action1Box.Name = "action1Box";
-            this.action1Box.Size = new System.Drawing.Size(50, 20);
+            this.action1Box.Size = new System.Drawing.Size(70, 20);
             this.action1Box.TabIndex = 4;
             this.action1Box.Tag = "";
-            this.action1Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.action1Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // action6Box
             // 
-            this.action6Box.Location = new System.Drawing.Point(105, 211);
+            this.action6Box.Location = new System.Drawing.Point(109, 211);
             this.action6Box.Name = "action6Box";
-            this.action6Box.Size = new System.Drawing.Size(50, 20);
+            this.action6Box.Size = new System.Drawing.Size(70, 20);
             this.action6Box.TabIndex = 5;
             this.action6Box.Tag = "";
-            this.action6Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.action6Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // action3Box
             // 
-            this.action3Box.Location = new System.Drawing.Point(105, 133);
+            this.action3Box.Location = new System.Drawing.Point(109, 133);
             this.action3Box.Name = "action3Box";
-            this.action3Box.Size = new System.Drawing.Size(50, 20);
+            this.action3Box.Size = new System.Drawing.Size(70, 20);
             this.action3Box.TabIndex = 6;
             this.action3Box.Tag = "";
-            this.action3Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.action3Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // action4Box
             // 
-            this.action4Box.Location = new System.Drawing.Point(105, 159);
+            this.action4Box.Location = new System.Drawing.Point(109, 159);
             this.action4Box.Name = "action4Box";
-            this.action4Box.Size = new System.Drawing.Size(50, 20);
+            this.action4Box.Size = new System.Drawing.Size(70, 20);
             this.action4Box.TabIndex = 7;
             this.action4Box.Tag = "";
-            this.action4Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.action4Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // action2Box
             // 
-            this.action2Box.Location = new System.Drawing.Point(105, 107);
+            this.action2Box.Location = new System.Drawing.Point(109, 107);
             this.action2Box.Name = "action2Box";
-            this.action2Box.Size = new System.Drawing.Size(50, 20);
+            this.action2Box.Size = new System.Drawing.Size(70, 20);
             this.action2Box.TabIndex = 8;
             this.action2Box.Tag = "";
-            this.action2Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.action2Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // action5Box
             // 
-            this.action5Box.Location = new System.Drawing.Point(105, 185);
+            this.action5Box.Location = new System.Drawing.Point(109, 185);
             this.action5Box.Name = "action5Box";
-            this.action5Box.Size = new System.Drawing.Size(50, 20);
+            this.action5Box.Size = new System.Drawing.Size(70, 20);
             this.action5Box.TabIndex = 9;
             this.action5Box.Tag = "";
-            this.action5Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.action5Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // action1label
             // 
             this.action1label.AutoSize = true;
-            this.action1label.Location = new System.Drawing.Point(48, 84);
+            this.action1label.Location = new System.Drawing.Point(52, 84);
             this.action1label.Name = "action1label";
             this.action1label.Size = new System.Drawing.Size(49, 13);
             this.action1label.TabIndex = 10;
@@ -176,7 +178,7 @@
             // action6label
             // 
             this.action6label.AutoSize = true;
-            this.action6label.Location = new System.Drawing.Point(48, 214);
+            this.action6label.Location = new System.Drawing.Point(52, 214);
             this.action6label.Name = "action6label";
             this.action6label.Size = new System.Drawing.Size(49, 13);
             this.action6label.TabIndex = 12;
@@ -185,7 +187,7 @@
             // action5label
             // 
             this.action5label.AutoSize = true;
-            this.action5label.Location = new System.Drawing.Point(48, 188);
+            this.action5label.Location = new System.Drawing.Point(52, 188);
             this.action5label.Name = "action5label";
             this.action5label.Size = new System.Drawing.Size(49, 13);
             this.action5label.TabIndex = 13;
@@ -194,7 +196,7 @@
             // action4label
             // 
             this.action4label.AutoSize = true;
-            this.action4label.Location = new System.Drawing.Point(48, 162);
+            this.action4label.Location = new System.Drawing.Point(52, 162);
             this.action4label.Name = "action4label";
             this.action4label.Size = new System.Drawing.Size(49, 13);
             this.action4label.TabIndex = 14;
@@ -203,7 +205,7 @@
             // action3label
             // 
             this.action3label.AutoSize = true;
-            this.action3label.Location = new System.Drawing.Point(48, 136);
+            this.action3label.Location = new System.Drawing.Point(52, 136);
             this.action3label.Name = "action3label";
             this.action3label.Size = new System.Drawing.Size(49, 13);
             this.action3label.TabIndex = 15;
@@ -212,7 +214,7 @@
             // action2label
             // 
             this.action2label.AutoSize = true;
-            this.action2label.Location = new System.Drawing.Point(48, 110);
+            this.action2label.Location = new System.Drawing.Point(52, 110);
             this.action2label.Name = "action2label";
             this.action2label.Size = new System.Drawing.Size(49, 13);
             this.action2label.TabIndex = 16;
@@ -222,10 +224,10 @@
             // 
             this.blockBox.Location = new System.Drawing.Point(74, 28);
             this.blockBox.Name = "blockBox";
-            this.blockBox.Size = new System.Drawing.Size(50, 20);
+            this.blockBox.Size = new System.Drawing.Size(70, 20);
             this.blockBox.TabIndex = 17;
             this.blockBox.Tag = "";
-            this.blockBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.blockBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // blocklabel
             // 
@@ -240,10 +242,10 @@
             // 
             this.dodgeBox.Location = new System.Drawing.Point(74, 54);
             this.dodgeBox.Name = "dodgeBox";
-            this.dodgeBox.Size = new System.Drawing.Size(50, 20);
+            this.dodgeBox.Size = new System.Drawing.Size(70, 20);
             this.dodgeBox.TabIndex = 19;
             this.dodgeBox.Tag = "";
-            this.dodgeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.dodgeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dodgelabel
             // 
@@ -258,10 +260,10 @@
             // 
             this.jumpBox.Location = new System.Drawing.Point(74, 80);
             this.jumpBox.Name = "jumpBox";
-            this.jumpBox.Size = new System.Drawing.Size(50, 20);
+            this.jumpBox.Size = new System.Drawing.Size(70, 20);
             this.jumpBox.TabIndex = 21;
             this.jumpBox.Tag = "";
-            this.jumpBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.jumpBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // jumplabel
             // 
@@ -305,7 +307,7 @@
             // interactlabel
             // 
             this.interactlabel.AutoSize = true;
-            this.interactlabel.Location = new System.Drawing.Point(55, 242);
+            this.interactlabel.Location = new System.Drawing.Point(59, 242);
             this.interactlabel.Name = "interactlabel";
             this.interactlabel.Size = new System.Drawing.Size(46, 13);
             this.interactlabel.TabIndex = 26;
@@ -313,12 +315,12 @@
             // 
             // interactBox
             // 
-            this.interactBox.Location = new System.Drawing.Point(105, 239);
+            this.interactBox.Location = new System.Drawing.Point(109, 239);
             this.interactBox.Name = "interactBox";
-            this.interactBox.Size = new System.Drawing.Size(50, 20);
+            this.interactBox.Size = new System.Drawing.Size(70, 20);
             this.interactBox.TabIndex = 27;
             this.interactBox.Tag = "";
-            this.interactBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.interactBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // actionBox
             // 
@@ -340,9 +342,9 @@
             this.actionBox.Controls.Add(this.action5label);
             this.actionBox.Controls.Add(this.action3label);
             this.actionBox.Controls.Add(this.action4label);
-            this.actionBox.Location = new System.Drawing.Point(43, 12);
+            this.actionBox.Location = new System.Drawing.Point(21, 12);
             this.actionBox.Name = "actionBox";
-            this.actionBox.Size = new System.Drawing.Size(187, 277);
+            this.actionBox.Size = new System.Drawing.Size(209, 277);
             this.actionBox.TabIndex = 28;
             this.actionBox.TabStop = false;
             this.actionBox.Text = "Actions";
@@ -360,7 +362,7 @@
             this.combatBox.Controls.Add(this.jumplabel);
             this.combatBox.Location = new System.Drawing.Point(259, 12);
             this.combatBox.Name = "combatBox";
-            this.combatBox.Size = new System.Drawing.Size(156, 148);
+            this.combatBox.Size = new System.Drawing.Size(172, 148);
             this.combatBox.TabIndex = 29;
             this.combatBox.TabStop = false;
             this.combatBox.Text = "Combat";
@@ -369,10 +371,10 @@
             // 
             this.parryBox.Location = new System.Drawing.Point(74, 106);
             this.parryBox.Name = "parryBox";
-            this.parryBox.Size = new System.Drawing.Size(50, 20);
+            this.parryBox.Size = new System.Drawing.Size(70, 20);
             this.parryBox.TabIndex = 24;
             this.parryBox.Tag = "";
-            this.parryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.parryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // parrylabel
             // 
@@ -395,7 +397,7 @@
             this.movementBox.Controls.Add(this.leftBox);
             this.movementBox.Location = new System.Drawing.Point(259, 176);
             this.movementBox.Name = "movementBox";
-            this.movementBox.Size = new System.Drawing.Size(156, 133);
+            this.movementBox.Size = new System.Drawing.Size(172, 133);
             this.movementBox.TabIndex = 30;
             this.movementBox.TabStop = false;
             this.movementBox.Text = "Movement";
@@ -404,10 +406,10 @@
             // 
             this.backBox.Location = new System.Drawing.Point(76, 97);
             this.backBox.Name = "backBox";
-            this.backBox.Size = new System.Drawing.Size(50, 20);
+            this.backBox.Size = new System.Drawing.Size(70, 20);
             this.backBox.TabIndex = 32;
             this.backBox.Tag = "";
-            this.backBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.backBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // forwardlabel2
             // 
@@ -440,19 +442,19 @@
             // 
             this.rightBox.Location = new System.Drawing.Point(76, 71);
             this.rightBox.Name = "rightBox";
-            this.rightBox.Size = new System.Drawing.Size(50, 20);
+            this.rightBox.Size = new System.Drawing.Size(70, 20);
             this.rightBox.TabIndex = 29;
             this.rightBox.Tag = "";
-            this.rightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.rightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // forwardBox
             // 
             this.forwardBox.Location = new System.Drawing.Point(76, 19);
             this.forwardBox.Name = "forwardBox";
-            this.forwardBox.Size = new System.Drawing.Size(50, 20);
+            this.forwardBox.Size = new System.Drawing.Size(70, 20);
             this.forwardBox.TabIndex = 25;
             this.forwardBox.Tag = "";
-            this.forwardBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.forwardBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // leftlabel
             // 
@@ -467,10 +469,10 @@
             // 
             this.leftBox.Location = new System.Drawing.Point(76, 45);
             this.leftBox.Name = "leftBox";
-            this.leftBox.Size = new System.Drawing.Size(50, 20);
+            this.leftBox.Size = new System.Drawing.Size(70, 20);
             this.leftBox.TabIndex = 27;
             this.leftBox.Tag = "";
-            this.leftBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.leftBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // InputForm
             // 
