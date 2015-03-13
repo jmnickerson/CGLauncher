@@ -176,7 +176,7 @@
             // action6label
             // 
             this.action6label.AutoSize = true;
-            this.action6label.Location = new System.Drawing.Point(48, 218);
+            this.action6label.Location = new System.Drawing.Point(48, 214);
             this.action6label.Name = "action6label";
             this.action6label.Size = new System.Drawing.Size(49, 13);
             this.action6label.TabIndex = 12;
@@ -185,7 +185,7 @@
             // action5label
             // 
             this.action5label.AutoSize = true;
-            this.action5label.Location = new System.Drawing.Point(48, 192);
+            this.action5label.Location = new System.Drawing.Point(48, 188);
             this.action5label.Name = "action5label";
             this.action5label.Size = new System.Drawing.Size(49, 13);
             this.action5label.TabIndex = 13;
