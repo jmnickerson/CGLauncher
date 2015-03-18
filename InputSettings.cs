@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using System.IO;
+using System.Xml.Linq;
+
 namespace CGLauncher
 {
     class InputSettings
@@ -42,6 +44,28 @@ namespace CGLauncher
 
                 }
             }
+        }
+
+        public void outputFile()
+        {
+
+            XDocument xmlFile = XDocument.Load(FILE);
+
+            var query = from c in xmlFile.Elements("profile").Elements("actionmap").Elements("action")
+                        //where(c => (string)c.Attribute("myattribute") == "some value")
+                        select c;
+
+            foreach (XElement action in query)
+            {
+                string temp;
+                if(keybinds.TryGetValue(action.Attribute("name").Value,out temp))
+                {
+                    action.Attribute("keyboard").Value = temp;
+                }
+                
+            }
+
+            xmlFile.Save("c:/test.xml");
         }
     }
 }

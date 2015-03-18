@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using System.Xml.Linq;
 
 namespace CGLauncher
 {
@@ -47,7 +47,8 @@ namespace CGLauncher
 
         private void closebutton_Click(object sender, EventArgs e)
         {
-            outputFile();
+            setValues();
+            inputSettings.outputFile();
             this.Close();
         }
 
@@ -81,11 +82,20 @@ namespace CGLauncher
             }
         }
 
-        private void outputFile()
+        private void setValues()
         {
+            SortedDictionary<string, string> keybinds = inputSettings.getKeybinds();
+            keybinds["click1"] = "TEST";
 
+    
+           /* foreach (XElement book in query)
+            {
+                if
+                book.Attribute("attr1").Value = "MyNewValue";
+            }*/
+
+            
         }
-
 
     }
 }
