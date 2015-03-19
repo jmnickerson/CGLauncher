@@ -81,6 +81,16 @@ namespace CGLauncher
             this.Close();
         }
 
+        private void jumplabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
         private void textBox_TextChanged(object sender, EventArgs e)
         {
             //Console.WriteLine("TEXT CHANGED");
