@@ -26,18 +26,59 @@ namespace CGLauncher
         private void setFromFile()
         {
             System.Collections.Generic.SortedDictionary<string, string> keybinds = inputSettings.getKeybinds();
+            SortedDictionary<string, TextBox> keytobox = new SortedDictionary<string, TextBox>();
             string val;
+            //Actions
+            keytobox.Add("attack1", primaryActionBox);
+            keytobox.Add("attack2", secondaryActionBox);
+            keytobox.Add("HUD_0", action1Box);
+            keytobox.Add("HUD_1", action2Box);
+            keytobox.Add("HUD_2", action3Box);
+            keytobox.Add("HUD_3", action4Box);
+            keytobox.Add("HUD_4", action5Box);
+            keytobox.Add("HUD_5", action6Box);
+            keytobox.Add("activate", interactBox);
+            //Combat
+            keytobox.Add("block", blockBox);
+            keytobox.Add("dodge", dodgeBox);
+            keytobox.Add("jump", jumpBox);
+            keytobox.Add("parry", parryBox);
+            //Movement
+            keytobox.Add("moveforward", forwardBox);
+            keytobox.Add("moveleft", leftBox);
+            keytobox.Add("moveright", rightBox);
+            keytobox.Add("moveback", backBox);
 
-            if (keybinds.TryGetValue("click1", out val))
+            foreach (KeyValuePair<string, TextBox> pair in keytobox)
             {
-                primaryActionBox.Text = "Mouse 1";
+                string temp;
+                if (keybinds.TryGetValue(pair.Key, out temp))
+                    pair.Value.Text = temp;
             }
-            if (keybinds.TryGetValue("click2", out val))
+            /*if (keybinds.TryGetValue("attack1", out val))
             {
-                secondaryActionBox.Text = "Mouse 2";
+                    primaryActionBox.Text = getDisplayString(val);
             }
+            if (keybinds.TryGetValue("attack2", out val))
+            {
+                secondaryActionBox.Text = getDisplayString(val);
+            }
+            if (keybinds.TryGetValue("attack2", out val))
+            {
+                secondaryActionBox.Text = getDisplayString(val);
+            }*/
             
- 
+        }
+
+        private string getDisplayString(string val)
+        {
+            /*if(val.Contains("mouse"))
+            {
+                if(val == "mouse1");
+                    retur
+            }
+            else*/
+                return val;             
         }
 
         private void cancelbutton_Click(object sender, EventArgs e)

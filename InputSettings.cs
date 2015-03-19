@@ -10,7 +10,7 @@ namespace CGLauncher
 {
     class InputSettings
     {
-        private string FILE = "c:/defaultProfile.xml";
+        private string FILE = "e:/defaultprofile.xml";
         private System.Collections.Generic.SortedDictionary<string, string> keybinds;
         public InputSettings()
         {
@@ -36,7 +36,7 @@ namespace CGLauncher
                 {
                     string name = xmlNode.Attributes["name"].Value;
                     string key = xmlNode.Attributes["keyboard"].Value;
-                    //Console.WriteLine("Name: " + name + " Keyboard: " + key);
+                    Console.WriteLine("Name: " + name + " Keyboard: " + key);
                     keybinds.Add(name, key);
                 }
                 catch (Exception e)
@@ -65,7 +65,7 @@ namespace CGLauncher
                 
             }
 
-            xmlFile.Save("c:/test.xml");
+            xmlFile.Save("e:/test.xml");
         }
     }
 }
