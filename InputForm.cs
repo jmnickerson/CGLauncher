@@ -16,18 +16,19 @@ namespace CGLauncher
         static extern bool HideCaret(IntPtr hWnd);
         private ContextMenu blankMenu = new ContextMenu();
         private InputSettings inputSettings;
+        private SortedDictionary<string, TextBox> keytobox;
         public InputForm()
         {
             InitializeComponent();
             inputSettings = new InputSettings();
+            keytobox = new SortedDictionary<string, TextBox>();
             setFromFile();
         }
 
         private void setFromFile()
         {
             System.Collections.Generic.SortedDictionary<string, string> keybinds = inputSettings.getKeybinds();
-            SortedDictionary<string, TextBox> keytobox = new SortedDictionary<string, TextBox>();
-            string val;
+            
             //Actions
             keytobox.Add("attack1", primaryActionBox);
             keytobox.Add("attack2", secondaryActionBox);
@@ -54,20 +55,7 @@ namespace CGLauncher
                 string temp;
                 if (keybinds.TryGetValue(pair.Key, out temp))
                     pair.Value.Text = temp;
-            }
-            /*if (keybinds.TryGetValue("attack1", out val))
-            {
-                    primaryActionBox.Text = getDisplayString(val);
-            }
-            if (keybinds.TryGetValue("attack2", out val))
-            {
-                secondaryActionBox.Text = getDisplayString(val);
-            }
-            if (keybinds.TryGetValue("attack2", out val))
-            {
-                secondaryActionBox.Text = getDisplayString(val);
-            }*/
-            
+            }           
         }
 
         private string getDisplayString(string val)
@@ -93,16 +81,6 @@ namespace CGLauncher
             this.Close();
         }
 
-        private void jumplabel_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox_TextChanged(object sender, EventArgs e)
         {
             //Console.WriteLine("TEXT CHANGED");
@@ -126,16 +104,10 @@ namespace CGLauncher
         private void setValues()
         {
             SortedDictionary<string, string> keybinds = inputSettings.getKeybinds();
-            keybinds["click1"] = "TEST";
-
-    
-           /* foreach (XElement book in query)
+            foreach (KeyValuePair<string, TextBox> pair in keytobox)
             {
-                if
-                book.Attribute("attr1").Value = "MyNewValue";
-            }*/
-
-            
+                keybinds[pair.Key] = pair.Value.Text;
+            }         
         }
 
     }
