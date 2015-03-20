@@ -10,7 +10,7 @@ namespace CGLauncher
 {
     class VideoSettings
     {
-        private string FILE = "../autoexec2.cfg";
+        private string FILE = "e:/autoexec2.cfg";
         private bool fullScreen;
         private bool VSync;
         private bool motionBlur;
@@ -21,7 +21,7 @@ namespace CGLauncher
         private int resy;
         private int videoQuality;
         private int shadowQuality;
-        private double bloom;
+        
 
         public bool getFullscreen() { return fullScreen; }
         public void setFullscreen(bool fs) { fullScreen = fs; }
@@ -42,8 +42,7 @@ namespace CGLauncher
         public void setVideoQuality(int vq) { videoQuality =vq; }
         public int getShadowQuality() { return shadowQuality; }
         public void setShadowQuality(int sq) { shadowQuality = sq; }
-        public double getBloom() { return bloom; }
-        public void setBloom(double bl) { bloom = bl; }
+        
 
         private ArrayList shadows;
 
@@ -114,11 +113,7 @@ namespace CGLauncher
                 {
                     shadowQuality = int.Parse(Regex.Match(line, @"\d+").Value, NumberFormatInfo.InvariantInfo);
                 }
-                if (line.Contains("r_HDRBloomRatio = "))
-                {
-                    Match m = Regex.Match(line, @"[0-9]+(?:\.[0-9]+)?");
-                    bloom = Convert.ToDouble(m.Value);
-                }
+
             }
         }
 
@@ -162,7 +157,7 @@ namespace CGLauncher
             lines.Add("cl_invertmouse = " + (invertMouse ? 1 : 0).ToString());
 
 
-            lines.Add("r_HDRBloomRatio = " + bloom);
+            //lines.Add("r_HDRBloomRatio = " + bloom);
    
             lines.Add("p_GEB_max_cells 4096");
 

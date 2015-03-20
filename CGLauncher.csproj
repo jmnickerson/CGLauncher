@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AdvancedVideoSettings.cs" />
     <Compile Include="AdvancedVideoSettingsForm.cs">
       <SubType>Form</SubType>
     </Compile>

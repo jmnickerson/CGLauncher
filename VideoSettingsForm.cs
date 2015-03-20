@@ -56,7 +56,7 @@ namespace CGLauncher
             shadowQualityComboBox.SelectedIndex = shadowQualityComboBox.FindStringExact(sqString);
 
             string bString = "Low";
-            double b = vs.getBloom();
+            /*double b = vs.getBloom();
             Console.WriteLine("BLOOM: " + b);
             if (b == 0.0)
                 bString = "Off";
@@ -67,7 +67,8 @@ namespace CGLauncher
             if (b == 0.3)
                 bString = "High";
             bloomComboBox.SelectedIndex = bloomComboBox.FindStringExact(bString);   
-        }
+        */
+}
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -120,7 +121,7 @@ namespace CGLauncher
                 sq = 1024;
             vs.setShadowQuality(sq);  
 
-            string bString = bloomComboBox.SelectedItem.ToString();
+            /*string bString = bloomComboBox.SelectedItem.ToString();
             double b = 1;
             if (bString == "Off")
                 b = 0.0;
@@ -131,7 +132,7 @@ namespace CGLauncher
             if (bString == "High")
                 b = 0.3;
             Console.WriteLine("Bloom set to: " + b);
-            vs.setBloom(b);
+            vs.setBloom(b);*/
             vs.output();
             this.Close();
         }

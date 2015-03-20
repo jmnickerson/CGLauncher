@@ -40,8 +40,6 @@
             this.videoQualityComboBox = new System.Windows.Forms.ComboBox();
             this.shadowQualityLabel = new System.Windows.Forms.Label();
             this.shadowQualityComboBox = new System.Windows.Forms.ComboBox();
-            this.bloomLabel = new System.Windows.Forms.Label();
-            this.bloomComboBox = new System.Windows.Forms.ComboBox();
             this.ssaoCheckBox = new System.Windows.Forms.CheckBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -186,28 +184,6 @@
             this.shadowQualityComboBox.Size = new System.Drawing.Size(94, 21);
             this.shadowQualityComboBox.TabIndex = 10;
             // 
-            // bloomLabel
-            // 
-            this.bloomLabel.AutoSize = true;
-            this.bloomLabel.Location = new System.Drawing.Point(99, 238);
-            this.bloomLabel.Name = "bloomLabel";
-            this.bloomLabel.Size = new System.Drawing.Size(42, 13);
-            this.bloomLabel.TabIndex = 11;
-            this.bloomLabel.Text = "Bloom: ";
-            // 
-            // bloomComboBox
-            // 
-            this.bloomComboBox.FormattingEnabled = true;
-            this.bloomComboBox.Items.AddRange(new object[] {
-            "Off",
-            "Low",
-            "Medium",
-            "High"});
-            this.bloomComboBox.Location = new System.Drawing.Point(148, 235);
-            this.bloomComboBox.Name = "bloomComboBox";
-            this.bloomComboBox.Size = new System.Drawing.Size(94, 21);
-            this.bloomComboBox.TabIndex = 12;
-            // 
             // ssaoCheckBox
             // 
             this.ssaoCheckBox.AutoSize = true;
@@ -225,8 +201,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 338);
             this.Controls.Add(this.ssaoCheckBox);
-            this.Controls.Add(this.bloomComboBox);
-            this.Controls.Add(this.bloomLabel);
             this.Controls.Add(this.shadowQualityComboBox);
             this.Controls.Add(this.shadowQualityLabel);
             this.Controls.Add(this.videoQualityComboBox);
@@ -260,8 +234,6 @@
         private System.Windows.Forms.ComboBox videoQualityComboBox;
         private System.Windows.Forms.Label shadowQualityLabel;
         private System.Windows.Forms.ComboBox shadowQualityComboBox;
-        private System.Windows.Forms.Label bloomLabel;
-        private System.Windows.Forms.ComboBox bloomComboBox;
         private System.Windows.Forms.CheckBox ssaoCheckBox;
         private System.Windows.Forms.BindingSource bindingSource1;
     }
