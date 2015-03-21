@@ -119,52 +119,55 @@ namespace CGLauncher
 
         public void output()
         {
+            string[] lines = System.IO.File.ReadAllLines(FILE);
+            List<string> lineslist = new List<string>(lines);
 
-            ArrayList lines = new ArrayList();
+            for (int i = 0; i < lineslist.Count; i++)
+            {
+                if (lineslist[i].Contains("r_fullscreen"))
+                {
+                    lineslist[i] =("r_fullscreen = " + (fullScreen ? 1 : 0).ToString());
+                }
+                if (lineslist[i].Contains("r_VSync = "))
+                {
+                    lineslist[i] = ("r_VSync = " + (fullScreen ? 1 : 0).ToString());
+                }
+                if (lineslist[i].Contains("r_MotionBlurShutterSpeed = "))
+                {
+                    if (motionBlur)
+                        lineslist[i] =("r_MotionBlurShutterSpeed = " + 0.001);
+                    else
+                        lineslist[i] =("r_MotionBlurShutterSpeed = " + 0);
+                }
 
-            lines.Add("r_displayinfo 0");
-            lines.Add("r_TexturesStreaming=0");
-            lines.Add("sv_timeofdayenable 0");
-            lines.Add("sv_servername = svname");
-            lines.Add("sv_cheatprotection = 1 ");
-            lines.Add("sv_maxplayers = 32");
-            lines.Add("net_pb_sv_enable true ");
-            lines.Add("g_timelimit = 30 ");
-            lines.Add("g_minteamlimit = 0 ");
-            lines.Add("g_revivetime = 20");
-            lines.Add("g_autoteambalance = 0 ");
-            lines.Add("g_tk_punish = 0 ");
-            lines.Add("ai_EnableWarningsErrors = 0");
-            lines.Add("designer_warning_enabled = 0");
+                if (lineslist[i].Contains("cl_invertmouse = "))
+                {
+                    lineslist[i] =("cl_invertmouse = " + (invertMouse ? 1 : 0).ToString());
+                }
+                if (lineslist[i].Contains("r_SSAO = "))
+                {
+                    lineslist[i] =("r_SSAO = " + (SSAO ? 1 : 0).ToString());
+                }
+                if (lineslist[i].Contains("r_width = "))
+                {
+                    lineslist[i] = ("r_width = " + resx);
+                }
+                if (lineslist[i].Contains("r_height = "))
+                {
+                    lineslist[i] =("r_height = " + resy);
+                }
+                if (lineslist[i].Contains("sys_spec = "))
+                {
+                    lineslist[i] =("sys_spec = " + videoQuality);
+                }
+                if (lineslist[i].Contains("e_ShadowsMaxTexRes = "))
+                {
+                    lineslist[i] =("e_ShadowsMaxTexRes = " + shadowQuality);
+                }
 
-            int fs = 
+            }
 
-            lines.Add("r_width = " + resx);
-            lines.Add("r_height = " + resy);
-            lines.Add("r_fullscreen = " + (fullScreen ? 1 : 0).ToString() );
-            lines.Add("r_VSync = " + (fullScreen ? 1 : 0).ToString() );
-
-            lines.Add("sys_spec = " + videoQuality);
-            lines.Add("e_ShadowsMaxTexRes = " + shadowQuality);
-            //lines.Add("cl_fov = " + fov);
-            lines.Add("r_MotionBlur = " + 2);
-            if (motionBlur)
-                lines.Add("r_MotionBlurShutterSpeed = " + 0.001);
-            else
-                lines.Add("r_MotionBlurShutterSpeed = " + 0);
-            lines.Add("r_MotionBlurMaxViewDist = " + 0);
-            lines.Add("r_SSAO = " + (SSAO ? 1 : 0).ToString());
-            lines.Add("cl_invertmouse = " + (invertMouse ? 1 : 0).ToString());
-
-
-            //lines.Add("r_HDRBloomRatio = " + bloom);
-   
-            lines.Add("p_GEB_max_cells 4096");
-
-
-            String[] linearr = (String[])lines.ToArray(typeof (string));
-
-            System.IO.File.WriteAllLines(FILE, linearr);
+            System.IO.File.WriteAllLines(FILE, lineslist.ToArray());
 
         }
     }
