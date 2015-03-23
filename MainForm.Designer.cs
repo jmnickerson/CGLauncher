@@ -31,11 +31,12 @@
             this.videoSettingsButton = new System.Windows.Forms.Button();
             this.inputSettingsButton = new System.Windows.Forms.Button();
             this.AdvVideoButton = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // videoSettingsButton
             // 
-            this.videoSettingsButton.Location = new System.Drawing.Point(206, 128);
+            this.videoSettingsButton.Location = new System.Drawing.Point(144, 128);
             this.videoSettingsButton.Name = "videoSettingsButton";
             this.videoSettingsButton.Size = new System.Drawing.Size(117, 23);
             this.videoSettingsButton.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // inputSettingsButton
             // 
-            this.inputSettingsButton.Location = new System.Drawing.Point(206, 62);
+            this.inputSettingsButton.Location = new System.Drawing.Point(144, 62);
             this.inputSettingsButton.Name = "inputSettingsButton";
             this.inputSettingsButton.Size = new System.Drawing.Size(117, 23);
             this.inputSettingsButton.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // AdvVideoButton
             // 
-            this.AdvVideoButton.Location = new System.Drawing.Point(179, 188);
+            this.AdvVideoButton.Location = new System.Drawing.Point(117, 188);
             this.AdvVideoButton.Name = "AdvVideoButton";
             this.AdvVideoButton.Size = new System.Drawing.Size(164, 23);
             this.AdvVideoButton.TabIndex = 2;
@@ -64,11 +65,19 @@
             this.AdvVideoButton.UseVisualStyleBackColor = true;
             this.AdvVideoButton.Click += new System.EventHandler(this.AdvVideoButton_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(457, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(269, 235);
+            this.panel1.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 262);
+            this.ClientSize = new System.Drawing.Size(778, 333);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.AdvVideoButton);
             this.Controls.Add(this.inputSettingsButton);
             this.Controls.Add(this.videoSettingsButton);
@@ -85,5 +94,6 @@
         private System.Windows.Forms.Button videoSettingsButton;
         private System.Windows.Forms.Button inputSettingsButton;
         private System.Windows.Forms.Button AdvVideoButton;
+        private System.Windows.Forms.Panel panel1;
     }
 }

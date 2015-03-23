@@ -94,6 +94,8 @@ namespace CGLauncher
             // 
             // primaryActionBox
             // 
+            this.primaryActionBox.BackColor = System.Drawing.SystemColors.Window;
+            this.primaryActionBox.ForeColor = System.Drawing.SystemColors.Window;
             this.primaryActionBox.Location = new System.Drawing.Point(109, 29);
             this.primaryActionBox.Name = "primaryActionBox";
             this.primaryActionBox.Size = new System.Drawing.Size(70, 20);

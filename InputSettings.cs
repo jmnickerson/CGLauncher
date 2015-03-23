@@ -12,6 +12,7 @@ namespace CGLauncher
     {
         private string FILE = "e:/defaultprofile.xml";
         private System.Collections.Generic.SortedDictionary<string, string> keybinds;
+      
         public InputSettings()
         {
             keybinds = new SortedDictionary<string, string>();

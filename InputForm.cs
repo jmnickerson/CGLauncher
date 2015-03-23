@@ -17,6 +17,8 @@ namespace CGLauncher
         private ContextMenu blankMenu = new ContextMenu();
         private InputSettings inputSettings;
         private SortedDictionary<string, TextBox> keytobox;
+        private Boolean firstClick = true;
+
         public InputForm()
         {
             InitializeComponent();
@@ -93,21 +95,35 @@ namespace CGLauncher
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
+            TextBox source = sender as TextBox;
             //Console.WriteLine("TEXT CHANGED");
             HideCaret(primaryActionBox.Handle);
+            //firstClick = false;
+            //source.BackColor = System.Drawing.SystemColors.Window;
             
         }
 
         private void textBox_MouseDown(Object sender, MouseEventArgs e)
         {
             TextBox source = sender as TextBox;
-            if (e.Button == MouseButtons.Left)
+            if(firstClick)
             {
-                source.Text = "Mouse 1";
+                source.Text = "";
+                //source.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                firstClick = false;
             }
-            if (e.Button == MouseButtons.Right)
-            {
-                source.Text = "Mouse 2";
+            else
+            { 
+                //source.BackColor = System.Drawing.SystemColors.Window;
+                if (e.Button == MouseButtons.Left)
+                {
+                    source.Text = "Mouse 1";
+                }
+                if (e.Button == MouseButtons.Right)
+                {
+                    source.Text = "Mouse 2";
+                }
+                firstClick = true;
             }
         }
 
