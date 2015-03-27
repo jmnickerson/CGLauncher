@@ -31,7 +31,8 @@
             this.videoSettingsButton = new System.Windows.Forms.Button();
             this.inputSettingsButton = new System.Windows.Forms.Button();
             this.AdvVideoButton = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.newsTitleLabel = new System.Windows.Forms.Label();
+            this.newsBodyLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // videoSettingsButton
@@ -65,19 +66,33 @@
             this.AdvVideoButton.UseVisualStyleBackColor = true;
             this.AdvVideoButton.Click += new System.EventHandler(this.AdvVideoButton_Click);
             // 
-            // panel1
+            // newsTitleLabel
             // 
-            this.panel1.Location = new System.Drawing.Point(457, 30);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(269, 235);
-            this.panel1.TabIndex = 3;
+            this.newsTitleLabel.AutoSize = true;
+            this.newsTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newsTitleLabel.Location = new System.Drawing.Point(347, 25);
+            this.newsTitleLabel.Name = "newsTitleLabel";
+            this.newsTitleLabel.Size = new System.Drawing.Size(102, 25);
+            this.newsTitleLabel.TabIndex = 3;
+            this.newsTitleLabel.Text = "RSS Title";
+            // 
+            // newsBodyLabel
+            // 
+            this.newsBodyLabel.AutoSize = true;
+            this.newsBodyLabel.Location = new System.Drawing.Point(349, 67);
+            this.newsBodyLabel.Name = "newsBodyLabel";
+            this.newsBodyLabel.Size = new System.Drawing.Size(56, 13);
+            this.newsBodyLabel.TabIndex = 4;
+            this.newsBodyLabel.Text = "RSS Body";
+            this.newsBodyLabel.Click += new System.EventHandler(this.newsBodyLabel_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(778, 333);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(913, 363);
+            this.Controls.Add(this.newsBodyLabel);
+            this.Controls.Add(this.newsTitleLabel);
             this.Controls.Add(this.AdvVideoButton);
             this.Controls.Add(this.inputSettingsButton);
             this.Controls.Add(this.videoSettingsButton);
@@ -86,6 +101,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CGLaunch";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -94,6 +110,7 @@
         private System.Windows.Forms.Button videoSettingsButton;
         private System.Windows.Forms.Button inputSettingsButton;
         private System.Windows.Forms.Button AdvVideoButton;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label newsTitleLabel;
+        private System.Windows.Forms.Label newsBodyLabel;
     }
 }

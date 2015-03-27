@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.ServiceModel.Syndication;
 using System.Text;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace CGLauncher
 {
@@ -14,6 +16,18 @@ namespace CGLauncher
         public MainForm()
         {
             InitializeComponent();
+            string url = "";
+            XmlReader reader = XmlReader.Create(url);
+            SyndicationFeed feed = SyndicationFeed.Load(reader);
+            reader.Close();
+            /*foreach (SyndicationItem item in feed.Items)
+            {
+            String subject = item.Title.Text;    
+            String summary = item.Summary.Text;
+            Console.WriteLine("Subject: " + subject + " Summary: " + summary);
+            */
+            newsBodyLabel.Text = feed.Items.First().Summary.Text;
+            newsTitleLabel.Text = feed.Items.First().Title.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,6 +48,11 @@ namespace CGLauncher
         {
             AdvancedVideoSettingsForm avsf = new AdvancedVideoSettingsForm();
             avsf.Show();
+        }
+
+        private void newsBodyLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
