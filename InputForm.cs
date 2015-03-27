@@ -95,7 +95,7 @@ namespace CGLauncher
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
-            TextBox source = sender as TextBox;
+            //TextBox source = sender as TextBox;
             //Console.WriteLine("TEXT CHANGED");
             HideCaret(primaryActionBox.Handle);
             //firstClick = false;
@@ -105,23 +105,25 @@ namespace CGLauncher
 
         private void textBox_MouseDown(Object sender, MouseEventArgs e)
         {
+            Console.WriteLine("firstClick " + firstClick);
             TextBox source = sender as TextBox;
             if(firstClick)
             {
                 source.Text = "";
-                //source.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                source.BackColor = System.Drawing.SystemColors.ActiveCaption;
                 firstClick = false;
             }
             else
             { 
-                //source.BackColor = System.Drawing.SystemColors.Window;
+            //source.Text = "";
+                source.BackColor = System.Drawing.SystemColors.Window;
                 if (e.Button == MouseButtons.Left)
                 {
-                    source.Text = "Mouse 1";
+                    source.Text = "mouse1";
                 }
                 if (e.Button == MouseButtons.Right)
                 {
-                    source.Text = "Mouse 2";
+                    source.Text = "mouse2";
                 }
                 firstClick = true;
             }
