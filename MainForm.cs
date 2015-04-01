@@ -6,8 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.ServiceModel.Syndication;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml;
+
 
 namespace CGLauncher
 {
@@ -16,7 +18,7 @@ namespace CGLauncher
         public MainForm()
         {
             InitializeComponent();
-            string url = "";
+            string url = "http://steamcommunity.com/games/268670/rss/";
             XmlReader reader = XmlReader.Create(url);
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             reader.Close();
@@ -26,8 +28,42 @@ namespace CGLauncher
             String summary = item.Summary.Text;
             Console.WriteLine("Subject: " + subject + " Summary: " + summary);
             */
-            newsBodyLabel.Text = feed.Items.First().Summary.Text;
+            TextSyndicationContent text = feed.Items.First().Summary;
+            string source = text.Text;
+            string summary = source.Replace("<br>", "");
+            var reg1 = new Regex("<.*?>");
+            string reg2 = "<.*?>";
+            summary = Regex.Replace(source,reg2, string.Empty);
+            
+            for(int i =0; i < summary.Length;i++)
+            {
+                if(summary[i] == '\n')
+                {
+                    if(i+1 < summary.Length && summary[i+1] == '\n')
+                    {
+                        summary = summary.Remove(i + 1, 1);
+                    }
+                }
+            }
+
+            List<string> lines = new List<string>( summary.Split(new string[] { "\n" }, StringSplitOptions.None));
+            for (int i = 0; i < lines.Count;i++ )
+            {
+                if(lines[i].Length <= 30)
+                {
+                    Console.WriteLine("long line");
+                }
+            }
+            var reg = new Regex("\".*?\"");
+            var matches = reg.Matches(source);
+            string image = matches[0].ToString();
+            image = image.Replace("\"", "");
+            Console.WriteLine(image);
+            newsBodyLabel.Text = summary;
             newsTitleLabel.Text = feed.Items.First().Title.Text;
+            newsPictureBox.ImageLocation = feed.ImageUrl.AbsoluteUri;
+            Uri myuri = new Uri(image);
+            newsPictureBox.ImageLocation = image;
         }
 
         private void button1_Click(object sender, EventArgs e)

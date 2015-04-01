@@ -74,6 +74,7 @@
             this.Controls.Add(this.bloomLabel);
             this.Controls.Add(this.CloseButton);
             this.Name = "AdvancedVideoSettingsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdvancedVideoSettingsForm";
             this.ResumeLayout(false);
             this.PerformLayout();
