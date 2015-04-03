@@ -34,12 +34,13 @@
             this.newsTitleLabel = new System.Windows.Forms.Label();
             this.newsBodyLabel = new System.Windows.Forms.Label();
             this.newsPictureBox = new System.Windows.Forms.PictureBox();
+            this.startButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.newsPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // videoSettingsButton
             // 
-            this.videoSettingsButton.Location = new System.Drawing.Point(97, 127);
+            this.videoSettingsButton.Location = new System.Drawing.Point(231, 368);
             this.videoSettingsButton.Name = "videoSettingsButton";
             this.videoSettingsButton.Size = new System.Drawing.Size(117, 23);
             this.videoSettingsButton.TabIndex = 0;
@@ -50,7 +51,7 @@
             // 
             // inputSettingsButton
             // 
-            this.inputSettingsButton.Location = new System.Drawing.Point(97, 72);
+            this.inputSettingsButton.Location = new System.Drawing.Point(76, 368);
             this.inputSettingsButton.Name = "inputSettingsButton";
             this.inputSettingsButton.Size = new System.Drawing.Size(117, 23);
             this.inputSettingsButton.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             // AdvVideoButton
             // 
-            this.AdvVideoButton.Location = new System.Drawing.Point(70, 188);
+            this.AdvVideoButton.Location = new System.Drawing.Point(384, 368);
             this.AdvVideoButton.Name = "AdvVideoButton";
             this.AdvVideoButton.Size = new System.Drawing.Size(164, 23);
             this.AdvVideoButton.TabIndex = 2;
@@ -72,16 +73,17 @@
             // 
             this.newsTitleLabel.AutoSize = true;
             this.newsTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newsTitleLabel.Location = new System.Drawing.Point(437, 22);
+            this.newsTitleLabel.Location = new System.Drawing.Point(246, 19);
             this.newsTitleLabel.Name = "newsTitleLabel";
             this.newsTitleLabel.Size = new System.Drawing.Size(102, 25);
             this.newsTitleLabel.TabIndex = 3;
             this.newsTitleLabel.Text = "RSS Title";
+            this.newsTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // newsBodyLabel
             // 
             this.newsBodyLabel.AutoSize = true;
-            this.newsBodyLabel.Location = new System.Drawing.Point(349, 246);
+            this.newsBodyLabel.Location = new System.Drawing.Point(25, 67);
             this.newsBodyLabel.MaximumSize = new System.Drawing.Size(300, 0);
             this.newsBodyLabel.Name = "newsBodyLabel";
             this.newsBodyLabel.Size = new System.Drawing.Size(299, 26);
@@ -92,18 +94,29 @@
             // 
             // newsPictureBox
             // 
-            this.newsPictureBox.Location = new System.Drawing.Point(379, 63);
+            this.newsPictureBox.Location = new System.Drawing.Point(373, 52);
             this.newsPictureBox.Name = "newsPictureBox";
-            this.newsPictureBox.Size = new System.Drawing.Size(202, 148);
+            this.newsPictureBox.Size = new System.Drawing.Size(339, 253);
             this.newsPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.newsPictureBox.TabIndex = 5;
             this.newsPictureBox.TabStop = false;
+            this.newsPictureBox.Click += new System.EventHandler(this.newsPictureBox_Click);
+            // 
+            // startButton
+            // 
+            this.startButton.Location = new System.Drawing.Point(585, 368);
+            this.startButton.Name = "startButton";
+            this.startButton.Size = new System.Drawing.Size(75, 23);
+            this.startButton.TabIndex = 6;
+            this.startButton.Text = "Start";
+            this.startButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 363);
+            this.ClientSize = new System.Drawing.Size(747, 403);
+            this.Controls.Add(this.startButton);
             this.Controls.Add(this.newsPictureBox);
             this.Controls.Add(this.newsBodyLabel);
             this.Controls.Add(this.newsTitleLabel);
@@ -128,5 +141,6 @@
         private System.Windows.Forms.Label newsTitleLabel;
         private System.Windows.Forms.Label newsBodyLabel;
         private System.Windows.Forms.PictureBox newsPictureBox;
+        private System.Windows.Forms.Button startButton;
     }
 }

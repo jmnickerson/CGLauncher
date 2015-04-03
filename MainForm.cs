@@ -61,9 +61,12 @@ namespace CGLauncher
             Console.WriteLine(image);
             newsBodyLabel.Text = summary;
             newsTitleLabel.Text = feed.Items.First().Title.Text;
-            newsPictureBox.ImageLocation = feed.ImageUrl.AbsoluteUri;
-            Uri myuri = new Uri(image);
-            newsPictureBox.ImageLocation = image;
+            if (!string.IsNullOrEmpty(image))
+            {
+                //newsPictureBox.ImageLocation = feed.ImageUrl.AbsoluteUri;
+                //Uri myuri = new Uri(image);
+                newsPictureBox.ImageLocation = image;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -87,6 +90,11 @@ namespace CGLauncher
         }
 
         private void newsBodyLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void newsPictureBox_Click(object sender, EventArgs e)
         {
 
         }
