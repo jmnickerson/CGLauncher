@@ -18,38 +18,38 @@ namespace CGLauncher
         public MainForm()
         {
             InitializeComponent();
+            setRSS();
+        }
+
+        private void setRSS()
+        {
             string url = "http://steamcommunity.com/games/268670/rss/";
             XmlReader reader = XmlReader.Create(url);
             SyndicationFeed feed = SyndicationFeed.Load(reader);
             reader.Close();
-            /*foreach (SyndicationItem item in feed.Items)
-            {
-            String subject = item.Title.Text;    
-            String summary = item.Summary.Text;
-            Console.WriteLine("Subject: " + subject + " Summary: " + summary);
-            */
+
             TextSyndicationContent text = feed.Items.First().Summary;
             string source = text.Text;
             string summary = source.Replace("<br>", "");
             var reg1 = new Regex("<.*?>");
             string reg2 = "<.*?>";
-            summary = Regex.Replace(source,reg2, string.Empty);
-            
-            for(int i =0; i < summary.Length;i++)
+            summary = Regex.Replace(source, reg2, string.Empty);
+
+            for (int i = 0; i < summary.Length; i++)
             {
-                if(summary[i] == '\n')
+                if (summary[i] == '\n')
                 {
-                    if(i+1 < summary.Length && summary[i+1] == '\n')
+                    if (i + 1 < summary.Length && summary[i + 1] == '\n')
                     {
                         summary = summary.Remove(i + 1, 1);
                     }
                 }
             }
 
-            List<string> lines = new List<string>( summary.Split(new string[] { "\n" }, StringSplitOptions.None));
-            for (int i = 0; i < lines.Count;i++ )
+            List<string> lines = new List<string>(summary.Split(new string[] { "\n" }, StringSplitOptions.None));
+            for (int i = 0; i < lines.Count; i++)
             {
-                if(lines[i].Length <= 30)
+                if (lines[i].Length <= 30)
                 {
                     Console.WriteLine("long line");
                 }
@@ -63,8 +63,6 @@ namespace CGLauncher
             newsTitleLabel.Text = feed.Items.First().Title.Text;
             if (!string.IsNullOrEmpty(image))
             {
-                //newsPictureBox.ImageLocation = feed.ImageUrl.AbsoluteUri;
-                //Uri myuri = new Uri(image);
                 newsPictureBox.ImageLocation = image;
             }
         }
