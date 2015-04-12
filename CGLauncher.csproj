@@ -41,6 +41,7 @@
     <Compile Include="AdvancedVideoSettingsForm.Designer.cs">
       <DependentUpon>AdvancedVideoSettingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlSectionHandler.cs" />
     <Compile Include="InputForm.cs">
       <SubType>Form</SubType>
     </Compile>

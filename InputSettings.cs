@@ -11,15 +11,15 @@ namespace CGLauncher
     class InputSettings
     {
         private string FILE = "e:/defaultprofile.xml";
-        private System.Collections.Generic.SortedDictionary<string, string> keybinds;
+        private System.Collections.Generic.Dictionary<string, string> keybinds;
       
         public InputSettings()
         {
-            keybinds = new SortedDictionary<string, string>();
+            keybinds = new Dictionary<string, string>();
             readFile();
         }
 
-        public System.Collections.Generic.SortedDictionary<string, string> getKeybinds()
+        public System.Collections.Generic.Dictionary<string, string> getKeybinds()
         {
             return keybinds;
         }

@@ -14,6 +14,7 @@ namespace CGLauncher
     public partial class VideoSettingsForm : Form
     {
         private VideoSettings vs;
+        private List<Control> elements;
         public VideoSettingsForm()
         {
             vs = new VideoSettings();
@@ -32,7 +33,7 @@ namespace CGLauncher
             ssaoCheckBox.Checked = vs.getSSAO();
 
             resolutionComboBox.SelectedIndex = resolutionComboBox.FindStringExact(vs.getResx() + " x " + vs.getResy());
-            
+
             string vqString = "Low";
             int vq = vs.getVideoQuality();
             if (vq == 1)
@@ -54,21 +55,7 @@ namespace CGLauncher
             if (sq == 1024)
                 sqString = "High";
             shadowQualityComboBox.SelectedIndex = shadowQualityComboBox.FindStringExact(sqString);
-
-            string bString = "Low";
-            /*double b = vs.getBloom();
-            Console.WriteLine("BLOOM: " + b);
-            if (b == 0.0)
-                bString = "Off";
-            if (b == 0.1)
-                bString = "Low";
-            if (b == 0.15)
-                bString = "Medium";
-            if (b == 0.3)
-                bString = "High";
-            bloomComboBox.SelectedIndex = bloomComboBox.FindStringExact(bString);   
-        */
-}
+        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -120,19 +107,6 @@ namespace CGLauncher
             if (sqString == "High")
                 sq = 1024;
             vs.setShadowQuality(sq);  
-
-            /*string bString = bloomComboBox.SelectedItem.ToString();
-            double b = 1;
-            if (bString == "Off")
-                b = 0.0;
-            if (bString == "Low")
-                b = 0.1;
-            if (bString == "Medium")
-                b = 0.15;
-            if (bString == "High")
-                b = 0.3;
-            Console.WriteLine("Bloom set to: " + b);
-            vs.setBloom(b);*/
             vs.output();
             this.Close();
         }

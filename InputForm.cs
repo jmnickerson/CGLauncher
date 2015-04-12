@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -16,20 +17,24 @@ namespace CGLauncher
         static extern bool HideCaret(IntPtr hWnd);
         private ContextMenu blankMenu = new ContextMenu();
         private InputSettings inputSettings;
-        private SortedDictionary<string, TextBox> keytobox;
+        private Dictionary<string, TextBox> keytobox;
+        private List<TextBox> boxArray;
         private Boolean firstClick = true;
+        private int selectedBox = 0;
+        private bool initialized = false;
 
         public InputForm()
         {
             InitializeComponent();
             inputSettings = new InputSettings();
-            keytobox = new SortedDictionary<string, TextBox>();
+            keytobox = new Dictionary<string, TextBox>();
+            boxArray = new List<TextBox>();
             setFromFile();
         }
 
         private void setFromFile()
         {
-            System.Collections.Generic.SortedDictionary<string, string> keybinds = inputSettings.getKeybinds();
+            System.Collections.Generic.Dictionary<string, string> keybinds = inputSettings.getKeybinds();
             
             //Actions
             keytobox.Add("attack1", primaryActionBox);
@@ -57,7 +62,10 @@ namespace CGLauncher
                 string temp;
                 if (keybinds.TryGetValue(pair.Key, out temp))
                     pair.Value.Text = temp;
-            }           
+                boxArray.Add(pair.Value);
+            }
+            this.ActiveControl = boxArray[selectedBox];
+            initialized = true;
         }
 
         private string getDisplayString(string val)
@@ -95,11 +103,18 @@ namespace CGLauncher
 
         private void textBox_TextChanged(object sender, EventArgs e)
         {
-            //TextBox source = sender as TextBox;
-            //Console.WriteLine("TEXT CHANGED");
-            HideCaret(primaryActionBox.Handle);
-            //firstClick = false;
-            //source.BackColor = System.Drawing.SystemColors.Window;
+            if(initialized)
+            {
+                //TextBox source = sender as TextBox;
+                //Console.WriteLine("TEXT CHANGED");
+                HideCaret(primaryActionBox.Handle);
+                firstClick = false;
+                selectNext();
+                //source.BackColor = System.Drawing.SystemColors.Window;
+
+            }
+
+            
             
         }
 
@@ -110,13 +125,13 @@ namespace CGLauncher
             if(firstClick)
             {
                 source.Text = "";
-                source.BackColor = System.Drawing.SystemColors.ActiveCaption;
+                //source.BackColor = System.Drawing.SystemColors.ActiveCaption;
                 firstClick = false;
             }
             else
             { 
             //source.Text = "";
-                source.BackColor = System.Drawing.SystemColors.Window;
+               // source.BackColor = System.Drawing.SystemColors.Window;
                 if (e.Button == MouseButtons.Left)
                 {
                     source.Text = "mouse1";
@@ -131,11 +146,32 @@ namespace CGLauncher
 
         private void setValues()
         {
-            SortedDictionary<string, string> keybinds = inputSettings.getKeybinds();
+            Dictionary<string, string> keybinds = inputSettings.getKeybinds();
             foreach (KeyValuePair<string, TextBox> pair in keytobox)
             {
                 keybinds[pair.Key] = pair.Value.Text;
             }         
+        }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Down)
+            {
+                selectNext();
+                return true;
+            }
+            if (keyData == Keys.Up)
+            {
+                selectPrevious();
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+
+
+        private void textBox_Enter(object sender, EventArgs e)
+        {
+
         }
 
     }
