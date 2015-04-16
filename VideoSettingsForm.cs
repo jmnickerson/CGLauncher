@@ -15,11 +15,17 @@ namespace CGLauncher
     {
         private VideoSettings vs;
         private List<Control> elements;
+        private ControlSelectionHandler controlSelection;
         public VideoSettingsForm()
         {
             vs = new VideoSettings();
             InitializeComponent();
             init();
+            elements = Controls.OfType<ComboBox>().Cast<Control>().ToList();        
+            elements.AddRange(Controls.OfType<CheckBox>().Cast<Control>().ToList());
+            elements.Reverse();
+            controlSelection = new ControlSelectionHandler(elements, this);
+            
         }
 
         public void init()
@@ -110,7 +116,52 @@ namespace CGLauncher
             vs.output();
             this.Close();
         }
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Down)
+            {
+                controlSelection.selectNext();
+                return true;
+            }
+            if (keyData == Keys.Up)
+            {
+                controlSelection.selectPrevious();
+                return true;
+            }
+            if (keyData == Keys.Enter)
+            {
+                
+                if (this.ActiveControl is CheckBox)
+                {
+                    CheckBox c1 = this.ActiveControl as CheckBox;
+                    c1.Checked = !c1.Checked;
+                }
+                if (this.ActiveControl is ComboBox)
+                {
+                    //ComboBox c1 = this.ActiveControl as ComboBox;
+                    //c1.SelectedIndex = c1.SelectedIndex+5;
+                    //controlSelection.selectNext();
+                }
+            }
 
+            if (keyData == Keys.K)
+            {
+                if (this.ActiveControl is ComboBox)
+                {
+                    ComboBox c1 = this.ActiveControl as ComboBox;
+                    //c1.SelectedIndex = (c1.SelectedIndex--) % c1.Items.Count;
+                }
+            }
+            if (keyData == Keys.L)
+            {
+                if (this.ActiveControl is ComboBox)
+                {
+                    ComboBox c1 = this.ActiveControl as ComboBox;
+                    //c1.SelectedIndex = (c1.SelectedIndex++) % c1.Items.Count;
+                }
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
         private void vSyncBox_CheckedChanged(object sender, EventArgs e)
         {
 

@@ -18,7 +18,7 @@ namespace CGLauncher
         public MainForm()
         {
             InitializeComponent();
-            setRSS();
+            //setRSS();
         }
 
         private void setRSS()
@@ -47,18 +47,18 @@ namespace CGLauncher
             }
 
             List<string> lines = new List<string>(summary.Split(new string[] { "\n" }, StringSplitOptions.None));
-            for (int i = 0; i < lines.Count; i++)
+            /*for (int i = 0; i < lines.Count; i++)
             {
                 if (lines[i].Length <= 30)
                 {
                     Console.WriteLine("long line");
                 }
-            }
+            }*/
             var reg = new Regex("\".*?\"");
             var matches = reg.Matches(source);
             string image = matches[0].ToString();
             image = image.Replace("\"", "");
-            Console.WriteLine(image);
+            //Console.WriteLine(image);
             newsBodyLabel.Text = summary;
             newsTitleLabel.Text = feed.Items.First().Title.Text;
             if (!string.IsNullOrEmpty(image))

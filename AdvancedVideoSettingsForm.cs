@@ -25,7 +25,7 @@ namespace CGLauncher
 
             string bString = "Low";
             double b = avs.getBloom();
-            Console.WriteLine("BLOOM: " + b);
+            //Console.WriteLine("BLOOM: " + b);
             if (b == 0.0)
                 bString = "Off";
             if (b == 0.1)
@@ -50,7 +50,7 @@ namespace CGLauncher
                b = 0.15;
            if (bString == "High")
                b = 0.3;
-           Console.WriteLine("Bloom set to: " + b);
+           //Console.WriteLine("Bloom set to: " + b);
             avs.setBloom(b);
             avs.output();
             this.Close();

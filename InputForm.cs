@@ -18,18 +18,20 @@ namespace CGLauncher
         private ContextMenu blankMenu = new ContextMenu();
         private InputSettings inputSettings;
         private Dictionary<string, TextBox> keytobox;
-        private List<TextBox> boxArray;
+        private List<Control> boxArray;
         private Boolean firstClick = true;
         private int selectedBox = 0;
         private bool initialized = false;
+        private ControlSelectionHandler controlSection;
 
         public InputForm()
         {
             InitializeComponent();
             inputSettings = new InputSettings();
             keytobox = new Dictionary<string, TextBox>();
-            boxArray = new List<TextBox>();
+            boxArray = new List<Control>();
             setFromFile();
+            controlSection = new ControlSelectionHandler(boxArray,this);
         }
 
         private void setFromFile()
@@ -62,6 +64,7 @@ namespace CGLauncher
                 string temp;
                 if (keybinds.TryGetValue(pair.Key, out temp))
                     pair.Value.Text = temp;
+                //Add this element to the list of Control objects for the key input selection.
                 boxArray.Add(pair.Value);
             }
             this.ActiveControl = boxArray[selectedBox];
@@ -109,7 +112,7 @@ namespace CGLauncher
                 //Console.WriteLine("TEXT CHANGED");
                 HideCaret(primaryActionBox.Handle);
                 firstClick = false;
-                selectNext();
+                controlSection.selectNext();
                 //source.BackColor = System.Drawing.SystemColors.Window;
 
             }
@@ -156,12 +159,12 @@ namespace CGLauncher
         {
             if (keyData == Keys.Down)
             {
-                selectNext();
+                controlSection.selectNext();
                 return true;
             }
             if (keyData == Keys.Up)
             {
-                selectPrevious();
+                controlSection.selectPrevious();
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);

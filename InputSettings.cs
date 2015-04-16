@@ -12,7 +12,7 @@ namespace CGLauncher
     {
         private string FILE = "e:/defaultprofile.xml";
         private System.Collections.Generic.Dictionary<string, string> keybinds;
-      
+
         public InputSettings()
         {
             keybinds = new Dictionary<string, string>();
@@ -37,7 +37,7 @@ namespace CGLauncher
                 {
                     string name = xmlNode.Attributes["name"].Value;
                     string key = xmlNode.Attributes["keyboard"].Value;
-                    Console.WriteLine("Name: " + name + " Keyboard: " + key);
+                    //Console.WriteLine("Name: " + name + " Keyboard: " + key);
                     keybinds.Add(name, key);
                 }
                 catch (Exception e)
