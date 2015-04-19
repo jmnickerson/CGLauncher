@@ -8,10 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using SlimDX;
+using SlimDX.XInput;
 
 namespace CGLauncher
 {
-    public partial class InputForm : Form
+    public partial class InputForm : BaseForm
     {
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         static extern bool HideCaret(IntPtr hWnd);
@@ -31,7 +33,7 @@ namespace CGLauncher
             keytobox = new Dictionary<string, TextBox>();
             boxArray = new List<Control>();
             setFromFile();
-            controlSection = new ControlSelectionHandler(boxArray,this);
+            controlSection = new ControlSelectionHandler(this);
         }
 
         private void setFromFile()
@@ -157,6 +159,17 @@ namespace CGLauncher
         }
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
+            if (keyData == Keys.Space)
+            {
+                Console.WriteLine("shift pressed");
+                GamepadState gamepadstate = new GamepadState(new SlimDX.XInput.UserIndex());
+                if (gamepadstate.A)
+                {
+                    Console.WriteLine("A pressed");
+                }
+
+            }
+
             if (keyData == Keys.Down)
             {
                 controlSection.selectNext();

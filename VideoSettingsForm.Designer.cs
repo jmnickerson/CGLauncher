@@ -42,6 +42,8 @@
             this.shadowQualityComboBox = new System.Windows.Forms.ComboBox();
             this.ssaoCheckBox = new System.Windows.Forms.CheckBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.applyButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,6 +96,8 @@
             // 
             // resolutionComboBox
             // 
+            this.resolutionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.resolutionComboBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.resolutionComboBox.FormattingEnabled = true;
             this.resolutionComboBox.Items.AddRange(new object[] {
             "640 x 480",
@@ -133,7 +137,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(109, 296);
+            this.closeButton.Location = new System.Drawing.Point(197, 264);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 6;
@@ -144,7 +148,7 @@
             // videoQualityLabel
             // 
             this.videoQualityLabel.AutoSize = true;
-            this.videoQualityLabel.Location = new System.Drawing.Point(65, 176);
+            this.videoQualityLabel.Location = new System.Drawing.Point(62, 179);
             this.videoQualityLabel.Name = "videoQualityLabel";
             this.videoQualityLabel.Size = new System.Drawing.Size(72, 13);
             this.videoQualityLabel.TabIndex = 7;
@@ -152,6 +156,7 @@
             // 
             // videoQualityComboBox
             // 
+            this.videoQualityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.videoQualityComboBox.FormattingEnabled = true;
             this.videoQualityComboBox.Items.AddRange(new object[] {
             "Low",
@@ -166,7 +171,7 @@
             // shadowQualityLabel
             // 
             this.shadowQualityLabel.AutoSize = true;
-            this.shadowQualityLabel.Location = new System.Drawing.Point(54, 207);
+            this.shadowQualityLabel.Location = new System.Drawing.Point(50, 210);
             this.shadowQualityLabel.Name = "shadowQualityLabel";
             this.shadowQualityLabel.Size = new System.Drawing.Size(84, 13);
             this.shadowQualityLabel.TabIndex = 9;
@@ -174,6 +179,7 @@
             // 
             // shadowQualityComboBox
             // 
+            this.shadowQualityComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.shadowQualityComboBox.FormattingEnabled = true;
             this.shadowQualityComboBox.Items.AddRange(new object[] {
             "Low",
@@ -195,11 +201,31 @@
             this.ssaoCheckBox.Text = "SSAO";
             this.ssaoCheckBox.UseVisualStyleBackColor = true;
             // 
+            // applyButton
+            // 
+            this.applyButton.Location = new System.Drawing.Point(105, 264);
+            this.applyButton.Name = "applyButton";
+            this.applyButton.Size = new System.Drawing.Size(75, 23);
+            this.applyButton.TabIndex = 15;
+            this.applyButton.Text = "Apply";
+            this.applyButton.UseVisualStyleBackColor = true;
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(13, 263);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 16;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            // 
             // VideoSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 338);
+            this.ClientSize = new System.Drawing.Size(284, 299);
+            this.Controls.Add(this.cancelButton);
+            this.Controls.Add(this.applyButton);
             this.Controls.Add(this.ssaoCheckBox);
             this.Controls.Add(this.shadowQualityComboBox);
             this.Controls.Add(this.shadowQualityLabel);
@@ -236,5 +262,7 @@
         private System.Windows.Forms.ComboBox shadowQualityComboBox;
         private System.Windows.Forms.CheckBox ssaoCheckBox;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button applyButton;
+        private System.Windows.Forms.Button cancelButton;
     }
 }
