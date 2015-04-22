@@ -11,23 +11,23 @@ namespace CGLauncher
         private Dictionary<ComboBox, Label> comboBoxToLabel;
         private int selectedControl;
         private System.Windows.Forms.Form form;
-
+        private List<ComboBox> comboBoxes = new List<ComboBox>();
+        private List<Label> labels = new List<Label>();
         public ControlSelectionHandler(System.Windows.Forms.Form mainForm)
         {
             this.form = mainForm;
             controls = new List<Control>();
-            List<ComboBox> comboBoxes = new List<ComboBox>();
-            List<Label> labels = new List<Label>();
+            
             List<GroupBox> groupBoxes = mainForm.Controls.OfType<GroupBox>().ToList();
-            //groupBoxes[0]
-            //foreach (GroupBox groupbox in forms)
+            comboBoxToLabel = new System.Collections.Generic.Dictionary<ComboBox, Label>();
+            if (groupBoxes.Count == 0)
             {
+                Console.WriteLine("No groupboxes");
                 controls.AddRange(form.Controls.OfType<ComboBox>().Cast<Control>().ToList());
                 controls.AddRange(form.Controls.OfType<CheckBox>().Cast<Control>().ToList());
                 controls.AddRange(form.Controls.OfType<TextBox>().Cast<Control>().ToList());
                 controls.Reverse();
                 controls.AddRange(form.Controls.OfType<Button>().Cast<Control>().ToList());
-                comboBoxToLabel = new System.Collections.Generic.Dictionary<ComboBox, Label>();
                 comboBoxes.AddRange(form.Controls.OfType<ComboBox>().ToList());
                 labels = form.Controls.OfType<Label>().ToList();
                 for (int i = 0; i < comboBoxes.Count; i++)
@@ -35,13 +35,37 @@ namespace CGLauncher
                     comboBoxToLabel.Add(comboBoxes[i], labels[i]);
                 }
             }
+            else
+                addGroupBoxes(groupBoxes);
 
             Console.WriteLine("GroupBoxes: " + groupBoxes.Count + " Controls: " + controls.Count);
             selectedControl = 0;
             
-            select();
+            //select();
         }
-        
+
+        private void addGroupBoxes(List<GroupBox> groupBoxes)
+        {
+            foreach (GroupBox groupBox in groupBoxes)
+            {
+                List<Control> boxControls = new List<Control>();
+                boxControls.AddRange(groupBox.Controls.OfType<ComboBox>().Cast<Control>().ToList());
+                boxControls.AddRange(groupBox.Controls.OfType<CheckBox>().Cast<Control>().ToList());
+                boxControls.AddRange(groupBox.Controls.OfType<TextBox>().Cast<Control>().ToList());
+                boxControls.Reverse();
+                boxControls.AddRange(groupBox.Controls.OfType<Button>().Cast<Control>().ToList());
+                Console.WriteLine("Boxcontrols size " + boxControls.Count);
+                controls.AddRange(boxControls);
+                comboBoxToLabel = new System.Collections.Generic.Dictionary<ComboBox, Label>();
+                comboBoxes.AddRange(form.Controls.OfType<ComboBox>().ToList());
+                labels.AddRange(form.Controls.OfType<Label>().ToList());
+                for (int i = 0; i < comboBoxes.Count; i++)
+                {
+                    comboBoxToLabel.Add(comboBoxes[i], labels[i]);
+                }
+            }
+        }
+
 
         public void selectPrevious()
         {

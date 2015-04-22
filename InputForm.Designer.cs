@@ -80,7 +80,7 @@ namespace CGLauncher
             this.primaryActionLabel.Location = new System.Drawing.Point(31, 32);
             this.primaryActionLabel.Name = "primaryActionLabel";
             this.primaryActionLabel.Size = new System.Drawing.Size(77, 13);
-            this.primaryActionLabel.TabIndex = 0;
+            this.primaryActionLabel.TabIndex = 21;
             this.primaryActionLabel.Text = "Primary Action:";
             // 
             // secondaryActionLabel
@@ -89,7 +89,7 @@ namespace CGLauncher
             this.secondaryActionLabel.Location = new System.Drawing.Point(11, 58);
             this.secondaryActionLabel.Name = "secondaryActionLabel";
             this.secondaryActionLabel.Size = new System.Drawing.Size(94, 13);
-            this.secondaryActionLabel.TabIndex = 1;
+            this.secondaryActionLabel.TabIndex = 22;
             this.secondaryActionLabel.Text = "Secondary Action:";
             // 
             // primaryActionBox
@@ -99,7 +99,7 @@ namespace CGLauncher
             this.primaryActionBox.Location = new System.Drawing.Point(109, 29);
             this.primaryActionBox.Name = "primaryActionBox";
             this.primaryActionBox.Size = new System.Drawing.Size(70, 20);
-            this.primaryActionBox.TabIndex = 2;
+            this.primaryActionBox.TabIndex = 1;
             this.primaryActionBox.Tag = "";
             this.primaryActionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.primaryActionBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -111,7 +111,7 @@ namespace CGLauncher
             this.secondaryActionBox.Location = new System.Drawing.Point(109, 55);
             this.secondaryActionBox.Name = "secondaryActionBox";
             this.secondaryActionBox.Size = new System.Drawing.Size(70, 20);
-            this.secondaryActionBox.TabIndex = 3;
+            this.secondaryActionBox.TabIndex = 2;
             this.secondaryActionBox.Tag = "";
             this.secondaryActionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.secondaryActionBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -123,7 +123,7 @@ namespace CGLauncher
             this.action1Box.Location = new System.Drawing.Point(109, 81);
             this.action1Box.Name = "action1Box";
             this.action1Box.Size = new System.Drawing.Size(70, 20);
-            this.action1Box.TabIndex = 4;
+            this.action1Box.TabIndex = 3;
             this.action1Box.Tag = "";
             this.action1Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action1Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -135,7 +135,7 @@ namespace CGLauncher
             this.action6Box.Location = new System.Drawing.Point(109, 211);
             this.action6Box.Name = "action6Box";
             this.action6Box.Size = new System.Drawing.Size(70, 20);
-            this.action6Box.TabIndex = 5;
+            this.action6Box.TabIndex = 8;
             this.action6Box.Tag = "";
             this.action6Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action6Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -147,7 +147,7 @@ namespace CGLauncher
             this.action3Box.Location = new System.Drawing.Point(109, 133);
             this.action3Box.Name = "action3Box";
             this.action3Box.Size = new System.Drawing.Size(70, 20);
-            this.action3Box.TabIndex = 6;
+            this.action3Box.TabIndex = 5;
             this.action3Box.Tag = "";
             this.action3Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action3Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -159,7 +159,7 @@ namespace CGLauncher
             this.action4Box.Location = new System.Drawing.Point(109, 159);
             this.action4Box.Name = "action4Box";
             this.action4Box.Size = new System.Drawing.Size(70, 20);
-            this.action4Box.TabIndex = 7;
+            this.action4Box.TabIndex = 6;
             this.action4Box.Tag = "";
             this.action4Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action4Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -171,7 +171,7 @@ namespace CGLauncher
             this.action2Box.Location = new System.Drawing.Point(109, 107);
             this.action2Box.Name = "action2Box";
             this.action2Box.Size = new System.Drawing.Size(70, 20);
-            this.action2Box.TabIndex = 8;
+            this.action2Box.TabIndex = 4;
             this.action2Box.Tag = "";
             this.action2Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action2Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -183,7 +183,7 @@ namespace CGLauncher
             this.action5Box.Location = new System.Drawing.Point(109, 185);
             this.action5Box.Name = "action5Box";
             this.action5Box.Size = new System.Drawing.Size(70, 20);
-            this.action5Box.TabIndex = 9;
+            this.action5Box.TabIndex = 7;
             this.action5Box.Tag = "";
             this.action5Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action5Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -196,7 +196,7 @@ namespace CGLauncher
             this.action1label.Location = new System.Drawing.Point(52, 84);
             this.action1label.Name = "action1label";
             this.action1label.Size = new System.Drawing.Size(49, 13);
-            this.action1label.TabIndex = 10;
+            this.action1label.TabIndex = 23;
             this.action1label.Text = "Action 1:";
             // 
             // action6label
@@ -205,7 +205,7 @@ namespace CGLauncher
             this.action6label.Location = new System.Drawing.Point(52, 214);
             this.action6label.Name = "action6label";
             this.action6label.Size = new System.Drawing.Size(49, 13);
-            this.action6label.TabIndex = 12;
+            this.action6label.TabIndex = 28;
             this.action6label.Text = "Action 6:";
             // 
             // action5label
@@ -214,7 +214,7 @@ namespace CGLauncher
             this.action5label.Location = new System.Drawing.Point(52, 188);
             this.action5label.Name = "action5label";
             this.action5label.Size = new System.Drawing.Size(49, 13);
-            this.action5label.TabIndex = 13;
+            this.action5label.TabIndex = 27;
             this.action5label.Text = "Action 5:";
             // 
             // action4label
@@ -223,7 +223,7 @@ namespace CGLauncher
             this.action4label.Location = new System.Drawing.Point(52, 162);
             this.action4label.Name = "action4label";
             this.action4label.Size = new System.Drawing.Size(49, 13);
-            this.action4label.TabIndex = 14;
+            this.action4label.TabIndex = 26;
             this.action4label.Text = "Action 4:";
             // 
             // action3label
@@ -232,7 +232,7 @@ namespace CGLauncher
             this.action3label.Location = new System.Drawing.Point(52, 136);
             this.action3label.Name = "action3label";
             this.action3label.Size = new System.Drawing.Size(49, 13);
-            this.action3label.TabIndex = 15;
+            this.action3label.TabIndex = 25;
             this.action3label.Text = "Action 3:";
             // 
             // action2label
@@ -241,7 +241,7 @@ namespace CGLauncher
             this.action2label.Location = new System.Drawing.Point(52, 110);
             this.action2label.Name = "action2label";
             this.action2label.Size = new System.Drawing.Size(49, 13);
-            this.action2label.TabIndex = 16;
+            this.action2label.TabIndex = 24;
             this.action2label.Text = "Action 2:";
             // 
             // blockBox
@@ -249,7 +249,7 @@ namespace CGLauncher
             this.blockBox.Location = new System.Drawing.Point(74, 28);
             this.blockBox.Name = "blockBox";
             this.blockBox.Size = new System.Drawing.Size(70, 20);
-            this.blockBox.TabIndex = 17;
+            this.blockBox.TabIndex = 10;
             this.blockBox.Tag = "";
             this.blockBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.blockBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -262,7 +262,7 @@ namespace CGLauncher
             this.blocklabel.Location = new System.Drawing.Point(29, 31);
             this.blocklabel.Name = "blocklabel";
             this.blocklabel.Size = new System.Drawing.Size(37, 13);
-            this.blocklabel.TabIndex = 18;
+            this.blocklabel.TabIndex = 30;
             this.blocklabel.Text = "Block:";
             // 
             // dodgeBox
@@ -270,7 +270,7 @@ namespace CGLauncher
             this.dodgeBox.Location = new System.Drawing.Point(74, 54);
             this.dodgeBox.Name = "dodgeBox";
             this.dodgeBox.Size = new System.Drawing.Size(70, 20);
-            this.dodgeBox.TabIndex = 19;
+            this.dodgeBox.TabIndex = 11;
             this.dodgeBox.Tag = "";
             this.dodgeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.dodgeBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -283,7 +283,7 @@ namespace CGLauncher
             this.dodgelabel.Location = new System.Drawing.Point(25, 57);
             this.dodgelabel.Name = "dodgelabel";
             this.dodgelabel.Size = new System.Drawing.Size(45, 13);
-            this.dodgelabel.TabIndex = 20;
+            this.dodgelabel.TabIndex = 31;
             this.dodgelabel.Text = "Dodge: ";
             // 
             // jumpBox
@@ -291,7 +291,7 @@ namespace CGLauncher
             this.jumpBox.Location = new System.Drawing.Point(74, 80);
             this.jumpBox.Name = "jumpBox";
             this.jumpBox.Size = new System.Drawing.Size(70, 20);
-            this.jumpBox.TabIndex = 21;
+            this.jumpBox.TabIndex = 12;
             this.jumpBox.Tag = "";
             this.jumpBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.jumpBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -304,7 +304,7 @@ namespace CGLauncher
             this.jumplabel.Location = new System.Drawing.Point(31, 83);
             this.jumplabel.Name = "jumplabel";
             this.jumplabel.Size = new System.Drawing.Size(35, 13);
-            this.jumplabel.TabIndex = 22;
+            this.jumplabel.TabIndex = 32;
             this.jumplabel.Text = "Jump:";
             this.jumplabel.Click += new System.EventHandler(this.jumplabel_Click);
             // 
@@ -313,7 +313,7 @@ namespace CGLauncher
             this.closebutton.Location = new System.Drawing.Point(297, 344);
             this.closebutton.Name = "closebutton";
             this.closebutton.Size = new System.Drawing.Size(75, 23);
-            this.closebutton.TabIndex = 23;
+            this.closebutton.TabIndex = 20;
             this.closebutton.Text = "Close";
             this.closebutton.UseVisualStyleBackColor = true;
             this.closebutton.Click += new System.EventHandler(this.closebutton_Click);
@@ -323,7 +323,7 @@ namespace CGLauncher
             this.cancelbutton.Location = new System.Drawing.Point(112, 344);
             this.cancelbutton.Name = "cancelbutton";
             this.cancelbutton.Size = new System.Drawing.Size(75, 23);
-            this.cancelbutton.TabIndex = 24;
+            this.cancelbutton.TabIndex = 18;
             this.cancelbutton.Text = "Cancel";
             this.cancelbutton.UseVisualStyleBackColor = true;
             this.cancelbutton.Click += new System.EventHandler(this.cancelbutton_Click);
@@ -333,7 +333,7 @@ namespace CGLauncher
             this.applybutton.Location = new System.Drawing.Point(206, 344);
             this.applybutton.Name = "applybutton";
             this.applybutton.Size = new System.Drawing.Size(75, 23);
-            this.applybutton.TabIndex = 25;
+            this.applybutton.TabIndex = 19;
             this.applybutton.Text = "Apply";
             this.applybutton.UseVisualStyleBackColor = true;
             // 
@@ -343,7 +343,7 @@ namespace CGLauncher
             this.interactlabel.Location = new System.Drawing.Point(59, 242);
             this.interactlabel.Name = "interactlabel";
             this.interactlabel.Size = new System.Drawing.Size(46, 13);
-            this.interactlabel.TabIndex = 26;
+            this.interactlabel.TabIndex = 29;
             this.interactlabel.Text = "Interact:";
             // 
             // interactBox
@@ -351,7 +351,7 @@ namespace CGLauncher
             this.interactBox.Location = new System.Drawing.Point(109, 239);
             this.interactBox.Name = "interactBox";
             this.interactBox.Size = new System.Drawing.Size(70, 20);
-            this.interactBox.TabIndex = 27;
+            this.interactBox.TabIndex = 9;
             this.interactBox.Tag = "";
             this.interactBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.interactBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -381,7 +381,7 @@ namespace CGLauncher
             this.actionBox.Location = new System.Drawing.Point(21, 12);
             this.actionBox.Name = "actionBox";
             this.actionBox.Size = new System.Drawing.Size(209, 277);
-            this.actionBox.TabIndex = 28;
+            this.actionBox.TabIndex = 50;
             this.actionBox.TabStop = false;
             this.actionBox.Text = "Actions";
             this.actionBox.Enter += new System.EventHandler(this.groupBox1_Enter);
@@ -399,7 +399,7 @@ namespace CGLauncher
             this.combatBox.Location = new System.Drawing.Point(259, 12);
             this.combatBox.Name = "combatBox";
             this.combatBox.Size = new System.Drawing.Size(172, 148);
-            this.combatBox.TabIndex = 29;
+            this.combatBox.TabIndex = 60;
             this.combatBox.TabStop = false;
             this.combatBox.Text = "Combat";
             // 
@@ -408,7 +408,7 @@ namespace CGLauncher
             this.parryBox.Location = new System.Drawing.Point(74, 106);
             this.parryBox.Name = "parryBox";
             this.parryBox.Size = new System.Drawing.Size(70, 20);
-            this.parryBox.TabIndex = 24;
+            this.parryBox.TabIndex = 13;
             this.parryBox.Tag = "";
             this.parryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.parryBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -421,7 +421,7 @@ namespace CGLauncher
             this.parrylabel.Location = new System.Drawing.Point(31, 109);
             this.parrylabel.Name = "parrylabel";
             this.parrylabel.Size = new System.Drawing.Size(34, 13);
-            this.parrylabel.TabIndex = 23;
+            this.parrylabel.TabIndex = 33;
             this.parrylabel.Text = "Parry:";
             // 
             // movementBox
@@ -437,7 +437,7 @@ namespace CGLauncher
             this.movementBox.Location = new System.Drawing.Point(259, 176);
             this.movementBox.Name = "movementBox";
             this.movementBox.Size = new System.Drawing.Size(172, 133);
-            this.movementBox.TabIndex = 30;
+            this.movementBox.TabIndex = 80;
             this.movementBox.TabStop = false;
             this.movementBox.Text = "Movement";
             // 
@@ -446,7 +446,7 @@ namespace CGLauncher
             this.backBox.Location = new System.Drawing.Point(76, 97);
             this.backBox.Name = "backBox";
             this.backBox.Size = new System.Drawing.Size(70, 20);
-            this.backBox.TabIndex = 32;
+            this.backBox.TabIndex = 17;
             this.backBox.Tag = "";
             this.backBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.backBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -459,7 +459,7 @@ namespace CGLauncher
             this.forwardlabel2.Location = new System.Drawing.Point(22, 24);
             this.forwardlabel2.Name = "forwardlabel2";
             this.forwardlabel2.Size = new System.Drawing.Size(48, 13);
-            this.forwardlabel2.TabIndex = 26;
+            this.forwardlabel2.TabIndex = 34;
             this.forwardlabel2.Text = "Forward:";
             // 
             // backlabel
@@ -468,7 +468,7 @@ namespace CGLauncher
             this.backlabel.Location = new System.Drawing.Point(35, 100);
             this.backlabel.Name = "backlabel";
             this.backlabel.Size = new System.Drawing.Size(35, 13);
-            this.backlabel.TabIndex = 31;
+            this.backlabel.TabIndex = 37;
             this.backlabel.Text = "Back:";
             // 
             // rightlabel
@@ -477,7 +477,7 @@ namespace CGLauncher
             this.rightlabel.Location = new System.Drawing.Point(35, 74);
             this.rightlabel.Name = "rightlabel";
             this.rightlabel.Size = new System.Drawing.Size(35, 13);
-            this.rightlabel.TabIndex = 30;
+            this.rightlabel.TabIndex = 36;
             this.rightlabel.Text = "Right:";
             // 
             // rightBox
@@ -485,7 +485,7 @@ namespace CGLauncher
             this.rightBox.Location = new System.Drawing.Point(76, 71);
             this.rightBox.Name = "rightBox";
             this.rightBox.Size = new System.Drawing.Size(70, 20);
-            this.rightBox.TabIndex = 29;
+            this.rightBox.TabIndex = 16;
             this.rightBox.Tag = "";
             this.rightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.rightBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -497,7 +497,7 @@ namespace CGLauncher
             this.forwardBox.Location = new System.Drawing.Point(76, 19);
             this.forwardBox.Name = "forwardBox";
             this.forwardBox.Size = new System.Drawing.Size(70, 20);
-            this.forwardBox.TabIndex = 25;
+            this.forwardBox.TabIndex = 14;
             this.forwardBox.Tag = "";
             this.forwardBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.forwardBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
@@ -510,7 +510,7 @@ namespace CGLauncher
             this.leftlabel.Location = new System.Drawing.Point(42, 48);
             this.leftlabel.Name = "leftlabel";
             this.leftlabel.Size = new System.Drawing.Size(28, 13);
-            this.leftlabel.TabIndex = 28;
+            this.leftlabel.TabIndex = 35;
             this.leftlabel.Text = "Left:";
             // 
             // leftBox
@@ -518,7 +518,7 @@ namespace CGLauncher
             this.leftBox.Location = new System.Drawing.Point(76, 45);
             this.leftBox.Name = "leftBox";
             this.leftBox.Size = new System.Drawing.Size(70, 20);
-            this.leftBox.TabIndex = 27;
+            this.leftBox.TabIndex = 15;
             this.leftBox.Tag = "";
             this.leftBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.leftBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);

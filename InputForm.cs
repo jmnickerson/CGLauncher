@@ -163,6 +163,7 @@ namespace CGLauncher
             {
                 Console.WriteLine("shift pressed");
                 GamepadState gamepadstate = new GamepadState(new SlimDX.XInput.UserIndex());
+                gamepadstate.Update();
                 if (gamepadstate.A)
                 {
                     Console.WriteLine("A pressed");
