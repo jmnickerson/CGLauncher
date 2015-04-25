@@ -9,21 +9,53 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Collections.Generic;
-using SlimDX; //x86
-using SlimDX.XInput; //x86
+
 
 namespace CGLauncher
 {
     public partial class VideoSettingsForm : BaseForm
     {
         private VideoSettings vs;
-        private Controller controller;
+        
         public VideoSettingsForm() : base()
         {  
             vs = new VideoSettings();
             InitializeComponent();
+            initControlSelectionHandler();
             init();
-            controlSelection = new ControlSelectionHandler(this);
+        }
+
+        protected override void initControlSelectionHandler()
+        {
+            List<Control> controls = new List<Control>();
+            Dictionary<Control, Label> comboBoxToLabel = new Dictionary<Control, Label>();
+            initControls(controls);
+            initComboBoxToLabel(comboBoxToLabel);
+
+            controlSelection = new ControlSelectionHandler(this, controls, comboBoxToLabel);
+        }
+
+        private void initControls(List<Control> controls)
+        {
+            controls.Add(FullScreenBox);
+            controls.Add(vSyncBox);
+            controls.Add(MotionBlurBox);
+            controls.Add(InvertMouseBox);
+            controls.Add(ssaoCheckBox);
+            controls.Add(resolutionComboBox);
+            controls.Add(videoQualityComboBox);
+            controls.Add(shadowQualityComboBox);
+            controls.Add(cancelButton);
+            controls.Add(applyButton);
+            controls.Add(closeButton);
+
+        }
+
+        private void initComboBoxToLabel(Dictionary<Control, Label> comboBoxToLabel)
+        {
+            comboBoxToLabel.Add(resolutionComboBox, Resolutionlabel);
+            comboBoxToLabel.Add(videoQualityComboBox, videoQualityLabel);
+            comboBoxToLabel.Add(shadowQualityComboBox, shadowQualityLabel);
         }
 
         public void init()
@@ -78,6 +110,22 @@ namespace CGLauncher
 
         private void closeButton_Click(object sender, EventArgs e)
         {
+            applyButton.PerformClick();   
+            this.Close();
+        }
+   
+        private void vSyncBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void applyButton_Click(object sender, EventArgs e)
+        {
             vs.setFullscreen(FullScreenBox.Checked);
             vs.setVSync(vSyncBox.Checked);
             vs.setMotionBlur(MotionBlurBox.Checked);
@@ -110,14 +158,8 @@ namespace CGLauncher
                 sq = 512;
             if (sqString == "High")
                 sq = 1024;
-            vs.setShadowQuality(sq);  
+            vs.setShadowQuality(sq);
             vs.output();
-            this.Close();
-        }
-   
-        private void vSyncBox_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

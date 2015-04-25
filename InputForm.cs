@@ -22,23 +22,87 @@ namespace CGLauncher
         private Dictionary<string, TextBox> keytobox;
         private List<Control> boxArray;
         private Boolean firstClick = true;
+        TextBox firstClickBox;
         private int selectedBox = 0;
         private bool initialized = false;
-        private ControlSelectionHandler controlSection;
 
-        public InputForm()
+        public InputForm() : base()
         {
             InitializeComponent();
             inputSettings = new InputSettings();
             keytobox = new Dictionary<string, TextBox>();
             boxArray = new List<Control>();
+            initControlSelectionHandler();
             setFromFile();
-            controlSection = new ControlSelectionHandler(this);
+            if (controller.IsConnected)
+                controllerRadioButton.Checked = true;
+            else
+                keyboardRadioButton.Checked = true;
+        }
+
+        protected override void initControlSelectionHandler()
+        {
+            List<Control> controls = new List<Control>();
+            Dictionary<Control, Label> comboBoxToLabel = new Dictionary<Control,Label>();
+            initControls(controls);
+            initComboBoxToLabel(comboBoxToLabel);
+
+            controlSelection = new ControlSelectionHandler(this, controls,comboBoxToLabel);
+        }
+
+        private void initControls(List<Control> controls)
+        {
+            controls.Add(primaryActionBox);
+            controls.Add(secondaryActionBox);
+            controls.Add(action1Box);
+            controls.Add(action2Box);
+            controls.Add(action3Box);
+            controls.Add(action4Box);
+            controls.Add(action5Box);
+            controls.Add(action6Box);
+            controls.Add(interactBox);
+
+            controls.Add(blockBox);
+            controls.Add(dodgeBox);
+            controls.Add(jumpBox);
+            controls.Add(parryBox);
+
+            controls.Add(forwardBox);
+            controls.Add(leftBox);
+            controls.Add(rightBox);
+            controls.Add(backBox);
+
+            controls.Add(cancelbutton);
+            controls.Add(applybutton);
+            controls.Add(closebutton);
+        }
+
+        private void initComboBoxToLabel(Dictionary<Control, Label> comboBoxToLabel)
+        {
+            comboBoxToLabel.Add(primaryActionBox,primaryActionLabel);
+            comboBoxToLabel.Add(secondaryActionBox,secondaryActionLabel);
+            comboBoxToLabel.Add(action1Box,action1label);
+            comboBoxToLabel.Add(action2Box,action2label);
+            comboBoxToLabel.Add(action3Box, action3label);
+            comboBoxToLabel.Add(action4Box, action4label);
+            comboBoxToLabel.Add(action5Box, action5label);
+            comboBoxToLabel.Add(action6Box, action6label);
+            comboBoxToLabel.Add(interactBox, interactlabel);
+
+            comboBoxToLabel.Add(blockBox,blocklabel);
+            comboBoxToLabel.Add(dodgeBox,dodgelabel);
+            comboBoxToLabel.Add(jumpBox,jumplabel);
+            comboBoxToLabel.Add(parryBox,parrylabel);
+
+            comboBoxToLabel.Add(forwardBox,forwardlabel2);
+            comboBoxToLabel.Add(leftBox,leftlabel);
+            comboBoxToLabel.Add(rightBox,rightlabel);
+            comboBoxToLabel.Add(backBox,backlabel);
         }
 
         private void setFromFile()
         {
-            System.Collections.Generic.Dictionary<string, string> keybinds = inputSettings.getKeybinds();
+            Dictionary<string, string> keybinds = inputSettings.getKeybinds();
             
             //Actions
             keytobox.Add("attack1", primaryActionBox);
@@ -110,13 +174,23 @@ namespace CGLauncher
         {
             if(initialized)
             {
+                Console.WriteLine("Text changed by: " + sender.ToString());
                 //TextBox source = sender as TextBox;
                 //Console.WriteLine("TEXT CHANGED");
                 HideCaret(primaryActionBox.Handle);
-                firstClick = false;
-                controlSection.selectNext();
-                //source.BackColor = System.Drawing.SystemColors.Window;
 
+                if (firstClick)
+                {
+                    firstClick = false;
+                    return;
+                }
+                
+                //source.BackColor = System.Drawing.SystemColors.Window;
+                if (sender is TextBox)
+                {
+                    if (!(sender as TextBox).Text.Contains("xi"))
+                        controlSelection.selectNext();
+                }
             }
 
             
@@ -126,7 +200,16 @@ namespace CGLauncher
         private void textBox_MouseDown(Object sender, MouseEventArgs e)
         {
             Console.WriteLine("firstClick " + firstClick);
+            if (firstClickBox == null)
+                firstClickBox = sender as TextBox;
+
             TextBox source = sender as TextBox;
+            if (firstClickBox != source)
+            {
+                firstClick = true;
+            }
+            firstClickBox = source;
+            controlSelection.select(source);
             if(firstClick)
             {
                 source.Text = "";
@@ -152,37 +235,33 @@ namespace CGLauncher
         private void setValues()
         {
             Dictionary<string, string> keybinds = inputSettings.getKeybinds();
-            foreach (KeyValuePair<string, TextBox> pair in keytobox)
-            {
-                keybinds[pair.Key] = pair.Value.Text;
-            }         
-        }
-        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-        {
-            if (keyData == Keys.Space)
-            {
-                Console.WriteLine("shift pressed");
-                GamepadState gamepadstate = new GamepadState(new SlimDX.XInput.UserIndex());
-                gamepadstate.Update();
-                if (gamepadstate.A)
+            Dictionary<string, string> controllerBinds = inputSettings.getControllerbinds();
+            if(keyboardRadioButton.Checked)
+                foreach (KeyValuePair<string, TextBox> pair in keytobox)
                 {
-                    Console.WriteLine("A pressed");
+                    keybinds[pair.Key] = pair.Value.Text;
                 }
-
-            }
+            if (controllerRadioButton.Checked)
+                foreach (KeyValuePair<string, TextBox> pair in keytobox)
+                {
+                    controllerBinds[pair.Key] = pair.Value.Text;
+                }   
+        }
+        /*protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
 
             if (keyData == Keys.Down)
             {
-                controlSection.selectNext();
+                controlSelection.selectNext();
                 return true;
             }
             if (keyData == Keys.Up)
             {
-                controlSection.selectPrevious();
+                controlSelection.selectPrevious();
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
-        }
+        }*/
 
 
 
@@ -191,5 +270,56 @@ namespace CGLauncher
 
         }
 
+        private void keyboardRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            controllerRadioButton.Checked = !keyboardRadioButton.Checked;
+            if (keyboardRadioButton.Checked)
+            {
+                loadKeybinds();
+                movementBox.Enabled = true;
+            }
+        }
+
+        private void controllerRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            keyboardRadioButton.Checked = !controllerRadioButton.Checked;
+            if (controllerRadioButton.Checked)
+            {
+                loadControllerKeybinds();
+                movementBox.Enabled = false;
+            }
+        }
+        private void loadControllerKeybinds()
+        {
+            Console.WriteLine("Loading Controller Keybinds");
+            Dictionary<string, string> controllerbinds = inputSettings.getControllerbinds();
+            foreach (KeyValuePair<string, TextBox> pair in keytobox)
+            {
+                string temp;
+                if (controllerbinds.TryGetValue(pair.Key, out temp))
+                    pair.Value.Text = temp;
+                else
+                    pair.Value.Text = "";
+            }
+            setValues();
+            inputSettings.outputFile();
+            controlSelection.selectFirst();
+        }
+        private void loadKeybinds()
+        {
+            Console.WriteLine("Loading Keyboard Keybinds");
+            Dictionary<string, string> keybinds = inputSettings.getKeybinds();
+            foreach (KeyValuePair<string, TextBox> pair in keytobox)
+            {
+                string temp;
+                if (keybinds.TryGetValue(pair.Key, out temp))
+                    pair.Value.Text = temp;
+                else
+                    pair.Value.Text = "";
+            }
+            setValues();
+            inputSettings.outputFile();
+            controlSelection.selectFirst();
+        }
     }
 }

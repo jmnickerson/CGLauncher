@@ -43,7 +43,7 @@
             this.videoSettingsButton.Location = new System.Drawing.Point(231, 368);
             this.videoSettingsButton.Name = "videoSettingsButton";
             this.videoSettingsButton.Size = new System.Drawing.Size(117, 23);
-            this.videoSettingsButton.TabIndex = 0;
+            this.videoSettingsButton.TabIndex = 1;
             this.videoSettingsButton.Text = "Video Settings";
             this.videoSettingsButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.videoSettingsButton.UseVisualStyleBackColor = true;
@@ -54,7 +54,7 @@
             this.inputSettingsButton.Location = new System.Drawing.Point(76, 368);
             this.inputSettingsButton.Name = "inputSettingsButton";
             this.inputSettingsButton.Size = new System.Drawing.Size(117, 23);
-            this.inputSettingsButton.TabIndex = 1;
+            this.inputSettingsButton.TabIndex = 0;
             this.inputSettingsButton.Text = "Input Settings";
             this.inputSettingsButton.UseVisualStyleBackColor = true;
             this.inputSettingsButton.Click += new System.EventHandler(this.button2_Click);
@@ -107,7 +107,7 @@
             this.startButton.Location = new System.Drawing.Point(585, 368);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
-            this.startButton.TabIndex = 6;
+            this.startButton.TabIndex = 3;
             this.startButton.Text = "Start";
             this.startButton.UseVisualStyleBackColor = true;
             // 

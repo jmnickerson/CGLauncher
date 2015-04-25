@@ -69,6 +69,8 @@ namespace CGLauncher
             this.forwardBox = new System.Windows.Forms.TextBox();
             this.leftlabel = new System.Windows.Forms.Label();
             this.leftBox = new System.Windows.Forms.TextBox();
+            this.keyboardRadioButton = new System.Windows.Forms.RadioButton();
+            this.controllerRadioButton = new System.Windows.Forms.RadioButton();
             this.actionBox.SuspendLayout();
             this.combatBox.SuspendLayout();
             this.movementBox.SuspendLayout();
@@ -396,7 +398,7 @@ namespace CGLauncher
             this.combatBox.Controls.Add(this.dodgelabel);
             this.combatBox.Controls.Add(this.jumpBox);
             this.combatBox.Controls.Add(this.jumplabel);
-            this.combatBox.Location = new System.Drawing.Point(259, 12);
+            this.combatBox.Location = new System.Drawing.Point(259, 13);
             this.combatBox.Name = "combatBox";
             this.combatBox.Size = new System.Drawing.Size(172, 148);
             this.combatBox.TabIndex = 60;
@@ -434,7 +436,7 @@ namespace CGLauncher
             this.movementBox.Controls.Add(this.forwardBox);
             this.movementBox.Controls.Add(this.leftlabel);
             this.movementBox.Controls.Add(this.leftBox);
-            this.movementBox.Location = new System.Drawing.Point(259, 176);
+            this.movementBox.Location = new System.Drawing.Point(259, 179);
             this.movementBox.Name = "movementBox";
             this.movementBox.Size = new System.Drawing.Size(172, 133);
             this.movementBox.TabIndex = 80;
@@ -525,11 +527,37 @@ namespace CGLauncher
             this.leftBox.Enter += new System.EventHandler(this.textBox_Enter);
             this.leftBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
+            // keyboardRadioButton
+            // 
+            this.keyboardRadioButton.AutoSize = true;
+            this.keyboardRadioButton.Location = new System.Drawing.Point(35, 296);
+            this.keyboardRadioButton.Name = "keyboardRadioButton";
+            this.keyboardRadioButton.Size = new System.Drawing.Size(70, 17);
+            this.keyboardRadioButton.TabIndex = 81;
+            this.keyboardRadioButton.TabStop = true;
+            this.keyboardRadioButton.Text = "Keyboard";
+            this.keyboardRadioButton.UseVisualStyleBackColor = true;
+            this.keyboardRadioButton.CheckedChanged += new System.EventHandler(this.keyboardRadioButton_CheckedChanged);
+            // 
+            // controllerRadioButton
+            // 
+            this.controllerRadioButton.AutoSize = true;
+            this.controllerRadioButton.Location = new System.Drawing.Point(131, 295);
+            this.controllerRadioButton.Name = "controllerRadioButton";
+            this.controllerRadioButton.Size = new System.Drawing.Size(69, 17);
+            this.controllerRadioButton.TabIndex = 82;
+            this.controllerRadioButton.TabStop = true;
+            this.controllerRadioButton.Text = "Controller";
+            this.controllerRadioButton.UseVisualStyleBackColor = true;
+            this.controllerRadioButton.CheckedChanged += new System.EventHandler(this.controllerRadioButton_CheckedChanged);
+            // 
             // InputForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 379);
+            this.Controls.Add(this.controllerRadioButton);
+            this.Controls.Add(this.keyboardRadioButton);
             this.Controls.Add(this.movementBox);
             this.Controls.Add(this.combatBox);
             this.Controls.Add(this.actionBox);
@@ -546,6 +574,7 @@ namespace CGLauncher
             this.movementBox.ResumeLayout(false);
             this.movementBox.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -591,5 +620,7 @@ namespace CGLauncher
         private System.Windows.Forms.TextBox forwardBox;
         private System.Windows.Forms.Label leftlabel;
         private System.Windows.Forms.TextBox leftBox;
+        private RadioButton keyboardRadioButton;
+        private RadioButton controllerRadioButton;
     }
 }

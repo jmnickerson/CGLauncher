@@ -13,12 +13,27 @@ using System.Xml;
 
 namespace CGLauncher
 {
-    public partial class MainForm : Form
+    public partial class MainForm : BaseForm
     {
         public MainForm()
         {
             InitializeComponent();
             //setRSS();
+            initControlSelectionHandler();
+            controlSelection.select();
+        }
+
+
+        protected override void initControlSelectionHandler()
+        {
+            List<Control> controls = new List<Control>();
+            Dictionary<Control, Label> comboBoxToLabel = new Dictionary<Control, Label>();
+            controls.Add(inputSettingsButton);
+            controls.Add(videoSettingsButton);
+            controls.Add(AdvVideoButton);
+            controls.Add(startButton);
+
+            controlSelection = new ControlSelectionHandler(this, controls, comboBoxToLabel);
         }
 
         private void setRSS()

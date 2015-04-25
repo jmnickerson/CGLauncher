@@ -7,68 +7,32 @@ namespace CGLauncher
 {
     public class ControlSelectionHandler
     {
-        private List<System.Windows.Forms.Control> controls;
-        private Dictionary<ComboBox, Label> comboBoxToLabel;
+        private List<Control> controls;
+        private Dictionary<Control, Label> comboBoxToLabel;
         private int selectedControl;
         private System.Windows.Forms.Form form;
         private List<ComboBox> comboBoxes = new List<ComboBox>();
         private List<Label> labels = new List<Label>();
-        public ControlSelectionHandler(System.Windows.Forms.Form mainForm)
-        {
-            this.form = mainForm;
-            controls = new List<Control>();
-            
-            List<GroupBox> groupBoxes = mainForm.Controls.OfType<GroupBox>().ToList();
-            comboBoxToLabel = new System.Collections.Generic.Dictionary<ComboBox, Label>();
-            if (groupBoxes.Count == 0)
-            {
-                Console.WriteLine("No groupboxes");
-                controls.AddRange(form.Controls.OfType<ComboBox>().Cast<Control>().ToList());
-                controls.AddRange(form.Controls.OfType<CheckBox>().Cast<Control>().ToList());
-                controls.AddRange(form.Controls.OfType<TextBox>().Cast<Control>().ToList());
-                controls.Reverse();
-                controls.AddRange(form.Controls.OfType<Button>().Cast<Control>().ToList());
-                comboBoxes.AddRange(form.Controls.OfType<ComboBox>().ToList());
-                labels = form.Controls.OfType<Label>().ToList();
-                for (int i = 0; i < comboBoxes.Count; i++)
-                {
-                    comboBoxToLabel.Add(comboBoxes[i], labels[i]);
-                }
-            }
-            else
-                addGroupBoxes(groupBoxes);
 
-            Console.WriteLine("GroupBoxes: " + groupBoxes.Count + " Controls: " + controls.Count);
-            selectedControl = 0;
-            
-            //select();
+        public ControlSelectionHandler(Form form, List<Control> controls, Dictionary<Control, Label> comboBoxToLabel)
+        {
+            this.form = form;
+            this.controls = controls;
+            this.comboBoxToLabel = comboBoxToLabel;
+            select();
         }
 
-        private void addGroupBoxes(List<GroupBox> groupBoxes)
+        public void select(Control control)
         {
-            foreach (GroupBox groupBox in groupBoxes)
-            {
-                List<Control> boxControls = new List<Control>();
-                boxControls.AddRange(groupBox.Controls.OfType<ComboBox>().Cast<Control>().ToList());
-                boxControls.AddRange(groupBox.Controls.OfType<CheckBox>().Cast<Control>().ToList());
-                boxControls.AddRange(groupBox.Controls.OfType<TextBox>().Cast<Control>().ToList());
-                boxControls.Reverse();
-                boxControls.AddRange(groupBox.Controls.OfType<Button>().Cast<Control>().ToList());
-                Console.WriteLine("Boxcontrols size " + boxControls.Count);
-                controls.AddRange(boxControls);
-                comboBoxToLabel = new System.Collections.Generic.Dictionary<ComboBox, Label>();
-                comboBoxes.AddRange(form.Controls.OfType<ComboBox>().ToList());
-                labels.AddRange(form.Controls.OfType<Label>().ToList());
-                for (int i = 0; i < comboBoxes.Count; i++)
-                {
-                    comboBoxToLabel.Add(comboBoxes[i], labels[i]);
-                }
-            }
+            unselect();
+            int index = controls.FindIndex(x => x==control);
+            selectedControl = index;
+            select();
         }
-
 
         public void selectPrevious()
         {
+            Console.WriteLine("select previous");
             unselect();
             if (selectedControl > 0)
                 selectedControl--;
@@ -79,11 +43,14 @@ namespace CGLauncher
 
         public void selectNext()
         {
+            Console.WriteLine("select next");
             unselect();
             if (selectedControl < controls.Count - 1)
                 selectedControl++;
             else
                 selectedControl = 0;
+            //if (controls[selectedControl] is TextBox)
+             //   (controls[selectedControl] as TextBox).Text = "";
             select();
             
         }
@@ -94,28 +61,39 @@ namespace CGLauncher
             {
                 (currentControl as System.Windows.Forms.CheckBox).ForeColor = System.Drawing.Color.Black;
             }
-            if (currentControl is System.Windows.Forms.ComboBox)
+            if(comboBoxToLabel.ContainsKey(currentControl))
             {
                 Label label;
-                if (comboBoxToLabel.TryGetValue((currentControl as ComboBox), out label))
+                if (comboBoxToLabel.TryGetValue(currentControl, out label))
                     label.ForeColor = System.Drawing.Color.Black;
             }
         }
 
         public void select()
         {
+            
             System.Windows.Forms.Control currentControl = controls[selectedControl];
+            Console.WriteLine("selected control: " + selectedControl + "   " + currentControl.Name);
             if (currentControl is System.Windows.Forms.CheckBox)
             {
                 (currentControl as System.Windows.Forms.CheckBox).ForeColor = System.Drawing.Color.Firebrick;
             }
-            if (currentControl is System.Windows.Forms.ComboBox)
+            if (comboBoxToLabel.ContainsKey(currentControl))
             {
                 Label label;
-                if(comboBoxToLabel.TryGetValue((currentControl as ComboBox), out label))
+                if (comboBoxToLabel.TryGetValue(currentControl, out label))
                     label.ForeColor = System.Drawing.Color.Firebrick;
             }
+            //if(form.ActiveControl != null)
+             //   form.ActiveControl.BeginInvoke(new MethodInvoker(() => form.ActiveControl = currentControl));
             form.ActiveControl = currentControl;
+        }
+
+        public void selectFirst()
+        {
+            unselect();
+            selectedControl = 0;
+            select();
         }
     }
 }

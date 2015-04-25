@@ -49,6 +49,7 @@
     </Compile>
     <Compile Include="ControlSelectionHandler.cs" />
     <Compile Include="GamePadState.cs" />
+    <Compile Include="GetForwardWindow.cs" />
     <Compile Include="InputForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +91,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AdvancedVideoSettingsForm.resx">
       <DependentUpon>AdvancedVideoSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BaseForm.resx">
+      <DependentUpon>BaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputForm.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
