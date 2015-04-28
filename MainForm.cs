@@ -18,7 +18,7 @@ namespace CGLauncher
         public MainForm()
         {
             InitializeComponent();
-            //setRSS();
+            setRSS();
             initControlSelectionHandler();
             controlSelection.select();
         }
@@ -61,20 +61,27 @@ namespace CGLauncher
                 }
             }
 
-            List<string> lines = new List<string>(summary.Split(new string[] { "\n" }, StringSplitOptions.None));
-            /*for (int i = 0; i < lines.Count; i++)
+            //Console.WriteLine("Summary count : " + summary.Length);
+            if (summary.Length > 850)
             {
-                if (lines[i].Length <= 30)
-                {
-                    Console.WriteLine("long line");
-                }
-            }*/
+                summary = summary.Remove(850);
+                summary = summary + "...";
+            }
+
+            List<string> lines = new List<string>(summary.Split(new string[] { "\n" }, StringSplitOptions.None));
+
+           // Console.WriteLine("number of lines " + lines.Count);
+            if(lines.Count > 10)
+            {
+                lines.RemoveRange(10, lines.Count - 11);
+                lines.Add("Continued...");
+            }
             var reg = new Regex("\".*?\"");
             var matches = reg.Matches(source);
             string image = matches[0].ToString();
             image = image.Replace("\"", "");
             //Console.WriteLine(image);
-            newsBodyLabel.Text = summary;
+            newsBodyLabel.Text = summary;//String.Join(String.Empty,lines.ToArray());
             newsTitleLabel.Text = feed.Items.First().Title.Text;
             if (!string.IsNullOrEmpty(image))
             {

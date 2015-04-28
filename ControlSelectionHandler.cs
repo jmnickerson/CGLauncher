@@ -22,6 +22,11 @@ namespace CGLauncher
             select();
         }
 
+        public Control getCurrentControl()
+        {
+            return controls[selectedControl];
+        }
+
         public void select(Control control)
         {
             unselect();
@@ -32,7 +37,7 @@ namespace CGLauncher
 
         public void selectPrevious()
         {
-            Console.WriteLine("select previous");
+            //Console.WriteLine("select previous");
             unselect();
             if (selectedControl > 0)
                 selectedControl--;
@@ -43,14 +48,18 @@ namespace CGLauncher
 
         public void selectNext()
         {
-            Console.WriteLine("select next");
+            //Console.WriteLine("select next");
             unselect();
             if (selectedControl < controls.Count - 1)
                 selectedControl++;
             else
                 selectedControl = 0;
-            //if (controls[selectedControl] is TextBox)
-             //   (controls[selectedControl] as TextBox).Text = "";
+            if (controls[selectedControl] is TextBox)
+            {
+                TextBox box = controls[selectedControl] as TextBox;
+                box.SelectionStart = 0;
+                box.SelectionLength = box.Text.Length;
+            }
             select();
             
         }
@@ -73,7 +82,7 @@ namespace CGLauncher
         {
             
             System.Windows.Forms.Control currentControl = controls[selectedControl];
-            Console.WriteLine("selected control: " + selectedControl + "   " + currentControl.Name);
+            //Console.WriteLine("selected control: " + selectedControl + "   " + currentControl.Name);
             if (currentControl is System.Windows.Forms.CheckBox)
             {
                 (currentControl as System.Windows.Forms.CheckBox).ForeColor = System.Drawing.Color.Firebrick;

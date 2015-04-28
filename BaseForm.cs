@@ -98,17 +98,17 @@ namespace CGLauncher
             
             if (gamePadState.DPad.Up)
             {
-                Console.WriteLine("UP");
+                //Console.WriteLine("UP");
                 controlSelection.selectPrevious();
             }
             if (gamePadState.DPad.Down)
             {
-                Console.WriteLine("DOWN");
+                //Console.WriteLine("DOWN");
                 controlSelection.selectNext();
             }
             if (gamePadState.DPad.Left)
             {
-                Console.WriteLine("LEFT" + this.ActiveControl.GetType().ToString());
+                //Console.WriteLine("LEFT" + this.ActiveControl.GetType().ToString());
                 if (this.ActiveControl is ComboBox)
                 {
                     ComboBox c1 = this.ActiveControl as ComboBox;

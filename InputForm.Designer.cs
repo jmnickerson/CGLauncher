@@ -79,7 +79,7 @@ namespace CGLauncher
             // primaryActionLabel
             // 
             this.primaryActionLabel.AutoSize = true;
-            this.primaryActionLabel.Location = new System.Drawing.Point(31, 32);
+            this.primaryActionLabel.Location = new System.Drawing.Point(24, 32);
             this.primaryActionLabel.Name = "primaryActionLabel";
             this.primaryActionLabel.Size = new System.Drawing.Size(77, 13);
             this.primaryActionLabel.TabIndex = 21;
@@ -99,6 +99,7 @@ namespace CGLauncher
             this.primaryActionBox.BackColor = System.Drawing.SystemColors.Window;
             this.primaryActionBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.primaryActionBox.Location = new System.Drawing.Point(109, 29);
+            this.primaryActionBox.Multiline = true;
             this.primaryActionBox.Name = "primaryActionBox";
             this.primaryActionBox.Size = new System.Drawing.Size(70, 20);
             this.primaryActionBox.TabIndex = 1;
@@ -106,11 +107,14 @@ namespace CGLauncher
             this.primaryActionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.primaryActionBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.primaryActionBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.primaryActionBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.primaryActionBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.primaryActionBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // secondaryActionBox
             // 
             this.secondaryActionBox.Location = new System.Drawing.Point(109, 55);
+            this.secondaryActionBox.Multiline = true;
             this.secondaryActionBox.Name = "secondaryActionBox";
             this.secondaryActionBox.Size = new System.Drawing.Size(70, 20);
             this.secondaryActionBox.TabIndex = 2;
@@ -118,11 +122,14 @@ namespace CGLauncher
             this.secondaryActionBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.secondaryActionBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.secondaryActionBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.secondaryActionBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.secondaryActionBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.secondaryActionBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // action1Box
             // 
             this.action1Box.Location = new System.Drawing.Point(109, 81);
+            this.action1Box.Multiline = true;
             this.action1Box.Name = "action1Box";
             this.action1Box.Size = new System.Drawing.Size(70, 20);
             this.action1Box.TabIndex = 3;
@@ -130,11 +137,14 @@ namespace CGLauncher
             this.action1Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action1Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.action1Box.Enter += new System.EventHandler(this.textBox_Enter);
+            this.action1Box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.action1Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.action1Box.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // action6Box
             // 
             this.action6Box.Location = new System.Drawing.Point(109, 211);
+            this.action6Box.Multiline = true;
             this.action6Box.Name = "action6Box";
             this.action6Box.Size = new System.Drawing.Size(70, 20);
             this.action6Box.TabIndex = 8;
@@ -142,11 +152,14 @@ namespace CGLauncher
             this.action6Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action6Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.action6Box.Enter += new System.EventHandler(this.textBox_Enter);
+            this.action6Box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.action6Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.action6Box.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // action3Box
             // 
             this.action3Box.Location = new System.Drawing.Point(109, 133);
+            this.action3Box.Multiline = true;
             this.action3Box.Name = "action3Box";
             this.action3Box.Size = new System.Drawing.Size(70, 20);
             this.action3Box.TabIndex = 5;
@@ -154,11 +167,14 @@ namespace CGLauncher
             this.action3Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action3Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.action3Box.Enter += new System.EventHandler(this.textBox_Enter);
+            this.action3Box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.action3Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.action3Box.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // action4Box
             // 
             this.action4Box.Location = new System.Drawing.Point(109, 159);
+            this.action4Box.Multiline = true;
             this.action4Box.Name = "action4Box";
             this.action4Box.Size = new System.Drawing.Size(70, 20);
             this.action4Box.TabIndex = 6;
@@ -166,11 +182,14 @@ namespace CGLauncher
             this.action4Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action4Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.action4Box.Enter += new System.EventHandler(this.textBox_Enter);
+            this.action4Box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.action4Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.action4Box.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // action2Box
             // 
             this.action2Box.Location = new System.Drawing.Point(109, 107);
+            this.action2Box.Multiline = true;
             this.action2Box.Name = "action2Box";
             this.action2Box.Size = new System.Drawing.Size(70, 20);
             this.action2Box.TabIndex = 4;
@@ -178,11 +197,14 @@ namespace CGLauncher
             this.action2Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action2Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.action2Box.Enter += new System.EventHandler(this.textBox_Enter);
+            this.action2Box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.action2Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.action2Box.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // action5Box
             // 
             this.action5Box.Location = new System.Drawing.Point(109, 185);
+            this.action5Box.Multiline = true;
             this.action5Box.Name = "action5Box";
             this.action5Box.Size = new System.Drawing.Size(70, 20);
             this.action5Box.TabIndex = 7;
@@ -190,6 +212,8 @@ namespace CGLauncher
             this.action5Box.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.action5Box.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.action5Box.Enter += new System.EventHandler(this.textBox_Enter);
+            this.action5Box.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.action5Box.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.action5Box.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // action1label
@@ -249,6 +273,7 @@ namespace CGLauncher
             // blockBox
             // 
             this.blockBox.Location = new System.Drawing.Point(74, 28);
+            this.blockBox.Multiline = true;
             this.blockBox.Name = "blockBox";
             this.blockBox.Size = new System.Drawing.Size(70, 20);
             this.blockBox.TabIndex = 10;
@@ -256,6 +281,8 @@ namespace CGLauncher
             this.blockBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.blockBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.blockBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.blockBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.blockBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.blockBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // blocklabel
@@ -270,6 +297,7 @@ namespace CGLauncher
             // dodgeBox
             // 
             this.dodgeBox.Location = new System.Drawing.Point(74, 54);
+            this.dodgeBox.Multiline = true;
             this.dodgeBox.Name = "dodgeBox";
             this.dodgeBox.Size = new System.Drawing.Size(70, 20);
             this.dodgeBox.TabIndex = 11;
@@ -277,6 +305,8 @@ namespace CGLauncher
             this.dodgeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.dodgeBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.dodgeBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.dodgeBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.dodgeBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.dodgeBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // dodgelabel
@@ -291,6 +321,7 @@ namespace CGLauncher
             // jumpBox
             // 
             this.jumpBox.Location = new System.Drawing.Point(74, 80);
+            this.jumpBox.Multiline = true;
             this.jumpBox.Name = "jumpBox";
             this.jumpBox.Size = new System.Drawing.Size(70, 20);
             this.jumpBox.TabIndex = 12;
@@ -298,6 +329,8 @@ namespace CGLauncher
             this.jumpBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.jumpBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.jumpBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.jumpBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.jumpBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.jumpBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // jumplabel
@@ -351,6 +384,7 @@ namespace CGLauncher
             // interactBox
             // 
             this.interactBox.Location = new System.Drawing.Point(109, 239);
+            this.interactBox.Multiline = true;
             this.interactBox.Name = "interactBox";
             this.interactBox.Size = new System.Drawing.Size(70, 20);
             this.interactBox.TabIndex = 9;
@@ -358,6 +392,8 @@ namespace CGLauncher
             this.interactBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.interactBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.interactBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.interactBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.interactBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.interactBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // actionBox
@@ -408,6 +444,7 @@ namespace CGLauncher
             // parryBox
             // 
             this.parryBox.Location = new System.Drawing.Point(74, 106);
+            this.parryBox.Multiline = true;
             this.parryBox.Name = "parryBox";
             this.parryBox.Size = new System.Drawing.Size(70, 20);
             this.parryBox.TabIndex = 13;
@@ -415,6 +452,8 @@ namespace CGLauncher
             this.parryBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.parryBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.parryBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.parryBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.parryBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.parryBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // parrylabel
@@ -446,6 +485,7 @@ namespace CGLauncher
             // backBox
             // 
             this.backBox.Location = new System.Drawing.Point(76, 97);
+            this.backBox.Multiline = true;
             this.backBox.Name = "backBox";
             this.backBox.Size = new System.Drawing.Size(70, 20);
             this.backBox.TabIndex = 17;
@@ -453,6 +493,8 @@ namespace CGLauncher
             this.backBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.backBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.backBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.backBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.backBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.backBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // forwardlabel2
@@ -485,6 +527,7 @@ namespace CGLauncher
             // rightBox
             // 
             this.rightBox.Location = new System.Drawing.Point(76, 71);
+            this.rightBox.Multiline = true;
             this.rightBox.Name = "rightBox";
             this.rightBox.Size = new System.Drawing.Size(70, 20);
             this.rightBox.TabIndex = 16;
@@ -492,11 +535,14 @@ namespace CGLauncher
             this.rightBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.rightBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.rightBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.rightBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.rightBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.rightBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // forwardBox
             // 
             this.forwardBox.Location = new System.Drawing.Point(76, 19);
+            this.forwardBox.Multiline = true;
             this.forwardBox.Name = "forwardBox";
             this.forwardBox.Size = new System.Drawing.Size(70, 20);
             this.forwardBox.TabIndex = 14;
@@ -504,6 +550,8 @@ namespace CGLauncher
             this.forwardBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.forwardBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.forwardBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.forwardBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.forwardBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.forwardBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // leftlabel
@@ -518,6 +566,7 @@ namespace CGLauncher
             // leftBox
             // 
             this.leftBox.Location = new System.Drawing.Point(76, 45);
+            this.leftBox.Multiline = true;
             this.leftBox.Name = "leftBox";
             this.leftBox.Size = new System.Drawing.Size(70, 20);
             this.leftBox.TabIndex = 15;
@@ -525,6 +574,8 @@ namespace CGLauncher
             this.leftBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.leftBox.TextChanged += new System.EventHandler(this.textBox_TextChanged);
             this.leftBox.Enter += new System.EventHandler(this.textBox_Enter);
+            this.leftBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtShortcut_KeyDown);
+            this.leftBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textbox_keypress);
             this.leftBox.MouseDown += new System.Windows.Forms.MouseEventHandler(this.textBox_MouseDown);
             // 
             // keyboardRadioButton

@@ -26,6 +26,8 @@ namespace CGLauncher
         private int selectedBox = 0;
         private bool initialized = false;
 
+        
+
         public InputForm() : base()
         {
             InitializeComponent();
@@ -38,6 +40,31 @@ namespace CGLauncher
                 controllerRadioButton.Checked = true;
             else
                 keyboardRadioButton.Checked = true;
+            
+            //It seems like there should be a better way to do this.
+            primaryActionBox.ContextMenu = new ContextMenu();
+            secondaryActionBox.ContextMenu = new ContextMenu();
+            action1Box.ContextMenu = new ContextMenu();
+            action2Box.ContextMenu = new ContextMenu();
+            action3Box.ContextMenu = new ContextMenu();
+            action4Box.ContextMenu = new ContextMenu();
+            action5Box.ContextMenu = new ContextMenu();
+            action6Box.ContextMenu = new ContextMenu();
+            interactBox.ContextMenu = new ContextMenu();
+
+            blockBox.ContextMenu = new ContextMenu();
+            dodgeBox.ContextMenu = new ContextMenu();
+            jumpBox.ContextMenu = new ContextMenu();
+            parryBox.ContextMenu = new ContextMenu();
+
+            forwardBox.ContextMenu = new ContextMenu();
+            leftBox.ContextMenu = new ContextMenu();
+            rightBox.ContextMenu = new ContextMenu();
+            backBox.ContextMenu = new ContextMenu();
+
+            cancelbutton.ContextMenu = new ContextMenu();
+            applybutton.ContextMenu = new ContextMenu();
+            closebutton.ContextMenu = new ContextMenu();
         }
 
         protected override void initControlSelectionHandler()
@@ -103,7 +130,7 @@ namespace CGLauncher
         private void setFromFile()
         {
             Dictionary<string, string> keybinds = inputSettings.getKeybinds();
-            
+            keytobox.Clear();
             //Actions
             keytobox.Add("attack1", primaryActionBox);
             keytobox.Add("attack2", secondaryActionBox);
@@ -148,6 +175,8 @@ namespace CGLauncher
                 return val;             
         }
 
+
+
         private void cancelbutton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -156,7 +185,7 @@ namespace CGLauncher
         private void closebutton_Click(object sender, EventArgs e)
         {
             setValues();
-            inputSettings.outputFile();
+            //inputSettings.outputFile();
             this.Close();
         }
 
@@ -174,10 +203,22 @@ namespace CGLauncher
         {
             if(initialized)
             {
-                Console.WriteLine("Text changed by: " + sender.ToString());
+                //Console.WriteLine("Text changed by: " + sender.ToString());
                 //TextBox source = sender as TextBox;
                 //Console.WriteLine("TEXT CHANGED");
                 HideCaret(primaryActionBox.Handle);
+
+                if (sender is TextBox)
+                {
+                    TextBox box = sender as TextBox;
+                    if (box.Text == " ")
+                        box.Text = "space";
+                    if (box.Text.Length == 2)
+                    {
+                        //Console.WriteLine("Length is 2");
+                        box.Text = box.Text[1].ToString();
+                    }
+                }
 
                 if (firstClick)
                 {
@@ -191,6 +232,7 @@ namespace CGLauncher
                     if (!(sender as TextBox).Text.Contains("xi"))
                         controlSelection.selectNext();
                 }
+                
             }
 
             
@@ -199,13 +241,14 @@ namespace CGLauncher
 
         private void textBox_MouseDown(Object sender, MouseEventArgs e)
         {
-            Console.WriteLine("firstClick " + firstClick);
+            //Console.WriteLine("firstClick " + firstClick);
             if (firstClickBox == null)
                 firstClickBox = sender as TextBox;
 
             TextBox source = sender as TextBox;
             if (firstClickBox != source)
             {
+                //Console.WriteLine("Not the same as the source");
                 firstClick = true;
             }
             firstClickBox = source;
@@ -245,7 +288,8 @@ namespace CGLauncher
                 foreach (KeyValuePair<string, TextBox> pair in keytobox)
                 {
                     controllerBinds[pair.Key] = pair.Value.Text;
-                }   
+                }
+            inputSettings.outputFile();
         }
         /*protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
@@ -291,7 +335,8 @@ namespace CGLauncher
         }
         private void loadControllerKeybinds()
         {
-            Console.WriteLine("Loading Controller Keybinds");
+            //Console.WriteLine("Loading Controller Keybinds");
+            setFromFile();
             Dictionary<string, string> controllerbinds = inputSettings.getControllerbinds();
             foreach (KeyValuePair<string, TextBox> pair in keytobox)
             {
@@ -302,12 +347,13 @@ namespace CGLauncher
                     pair.Value.Text = "";
             }
             setValues();
-            inputSettings.outputFile();
+            
             controlSelection.selectFirst();
         }
         private void loadKeybinds()
         {
-            Console.WriteLine("Loading Keyboard Keybinds");
+            //Console.WriteLine("Loading Keyboard Keybinds");
+            setFromFile();
             Dictionary<string, string> keybinds = inputSettings.getKeybinds();
             foreach (KeyValuePair<string, TextBox> pair in keytobox)
             {
@@ -318,8 +364,55 @@ namespace CGLauncher
                     pair.Value.Text = "";
             }
             setValues();
-            inputSettings.outputFile();
+            
             controlSelection.selectFirst();
+        }
+
+        private void textbox_keypress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\t' || e.KeyChar== (char)13)
+                e.Handled = true;
+        }
+
+        private void txtShortcut_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Tab)
+            {
+                //Console.WriteLine("Left Shift Pressed");
+                if (controlSelection.getCurrentControl() is TextBox)
+                    (controlSelection.getCurrentControl() as TextBox).Text = "tab";
+            }
+            if (e.KeyCode == Keys.LControlKey)
+            {
+                //Console.WriteLine("Left Control Key");
+            }
+            if (e.Control)
+            {
+                //Console.WriteLine("CONTROL PRESSED");
+                if (controlSelection.getCurrentControl() is TextBox)
+                    (controlSelection.getCurrentControl() as TextBox).Text = "lctrl";
+            }
+            if (e.Shift)
+            {
+               // Console.WriteLine("CONTROL PRESSED");
+                if (controlSelection.getCurrentControl() is TextBox)
+                    (controlSelection.getCurrentControl() as TextBox).Text = "lshift";
+            }
+         
+            if (e.Alt)
+            {
+               // Console.WriteLine("CONTROL PRESSED");
+                if (controlSelection.getCurrentControl() is TextBox)
+                    (controlSelection.getCurrentControl() as TextBox).Text = "lalt";
+            }
+        }
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            
+            //if (keyData == Keys.L)
+               // Console.WriteLine("L pressed");
+            return base.ProcessCmdKey(ref msg, keyData);
         }
     }
 }
